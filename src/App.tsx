@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useRef } from "react";
 import { useAddCommentMutation } from "./redux/modules/apiSlice";
 import { debounce } from "lodash";
 
@@ -10,6 +10,8 @@ export interface CommentType {
 }
 
 const App = () => {
+  const nameRef = useRef<any>();
+  const contextRef = useRef<any>();
   const [addComment] = useAddCommentMutation();
   const [name, setName] = useState("");
   const [context, setContext] = useState("");
@@ -39,8 +41,8 @@ const App = () => {
   ) => {
     e.preventDefault();
     addFn(newContent);
-    setName("");
-    setContext("");
+    nameRef.current.value = "";
+    contextRef.current.value = "";
   };
   console.log(name, context);
 
@@ -64,10 +66,10 @@ const App = () => {
         <form
           onSubmit={(e) => onSubmitCommentHandler(e, addComment, newComment)}
         >
-          <input onChange={(e) => onChangeNameHandler(e)} value={name} />
+          <input ref={nameRef} onChange={(e) => onChangeNameHandler(e)} />
           <textarea
+            ref={contextRef}
             onChange={(e) => onChangeContextHandler(e)}
-            value={context}
           />
           <button>입력</button>
         </form>
