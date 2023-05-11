@@ -9,7 +9,6 @@ import {
   query,
   updateDoc,
 } from "firebase/firestore";
-import { CommentType } from "../../App";
 import { dbService } from "../../utils/firebase";
 
 export const courseApi = createApi({

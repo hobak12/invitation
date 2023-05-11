@@ -6,14 +6,6 @@ import {
   useUpdateCommentMutation,
 } from "./redux/modules/apiSlice";
 import { debounce } from "lodash";
-import { Timestamp } from "@firebase/firestore";
-
-export interface CommentType {
-  createdAt?: any;
-  id?: string;
-  name: string;
-  context: string;
-}
 
 const App = () => {
   const nameRef = useRef<any>();
@@ -24,10 +16,6 @@ const App = () => {
   const [context, setContext] = useState("");
   const trimName = name && name.trim();
   const trimContext = context && context.trim();
-
-  {
-    data?.map((item) => console.log(String(item.createdAt.toDate())));
-  }
 
   const newComment = {
     createdAt: new Date(),
@@ -72,7 +60,12 @@ const App = () => {
             <div key={item.id}>
               <div>{item.context}</div>
               <div>{item.name}</div>
-              <div>{String(item.createdAt.toDate()).slice(0, 21)}</div>
+              <div>
+                {new Date(
+                  item.createdAt.seconds * 1000 +
+                    item.createdAt.nanoseconds / 1000000
+                ).toLocaleString()}
+              </div>
               <button>수정</button>
               <button>삭제</button>
               <div>비밀번호</div>
