@@ -5,7 +5,7 @@ declare interface TimeType {
 
 declare interface CommentType {
   id?: string;
-  createdAt?: any;
+  createdAt: any;
   name: string;
   context: string;
 }

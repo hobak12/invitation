@@ -10,7 +10,42 @@ import { debounce } from "lodash";
 const App = () => {
   const nameRef = useRef<any>();
   const contextRef = useRef<any>();
+
+  //방명록 추가
   const [addComment] = useAddCommentMutation();
+  const onSubmitAddCommentHandler = (
+    e: React.FormEvent<HTMLFormElement>,
+    addFn: any,
+    newContent: CommentType
+  ) => {
+    e.preventDefault();
+    addFn(newContent);
+    nameRef.current.value = "";
+    contextRef.current.value = "";
+  };
+
+  //방명록 삭제
+  const [deleteComment] = useDeleteCommentMutation();
+  const onClickDeleteCommentHandler = (
+    e: React.MouseEvent<HTMLButtonElement, MouseEvent>,
+    deleteFn: (id: string | undefined) => void,
+    id: string | undefined
+  ) => {
+    e.preventDefault();
+    deleteFn(id);
+  };
+
+  //방명록 수정
+  const [updateComment] = useUpdateCommentMutation();
+  const onClickUpdateCommentHandler = (
+    e: React.MouseEvent<HTMLButtonElement, MouseEvent>,
+    updateFn: (id: string | undefined) => void,
+    id: string | undefined
+  ) => {
+    e.preventDefault();
+    updateFn(id);
+  };
+
   const { data, isError, isLoading } = useGetCommentQuery();
   const [name, setName] = useState("");
   const [context, setContext] = useState("");
@@ -33,17 +68,6 @@ const App = () => {
     setContext(e.target.value);
   }, 500);
 
-  const onSubmitCommentHandler = (
-    e: React.FormEvent<HTMLFormElement>,
-    addFn: any,
-    newContent: CommentType
-  ) => {
-    e.preventDefault();
-    addFn(newContent);
-    nameRef.current.value = "";
-    contextRef.current.value = "";
-  };
-
   if (isError) {
     return <>Error: 데이터를 불러오지 못했습니다.</>;
   }
@@ -53,8 +77,8 @@ const App = () => {
   }
 
   return (
-    <div className="flex justify-center bg-pink-200 ">
-      <div className="bg-purple-100">
+    <div className="flex justify-center bg-pink-200  ">
+      <div className="bg-purple-100 w-[30%]">
         {data?.map((item) => {
           return (
             <div key={item.id}>
@@ -66,8 +90,20 @@ const App = () => {
                     item.createdAt.nanoseconds / 1000000
                 ).toLocaleString()}
               </div>
-              <button>수정</button>
-              <button>삭제</button>
+              <button
+                onClick={(e) =>
+                  onClickUpdateCommentHandler(e, updateComment, item.id)
+                }
+              >
+                수정
+              </button>
+              <button
+                onClick={(e) =>
+                  onClickDeleteCommentHandler(e, deleteComment, item.id)
+                }
+              >
+                삭제
+              </button>
               <div>비밀번호</div>
               <div>{}</div>
             </div>
@@ -75,6 +111,7 @@ const App = () => {
         })}
         <div>
           <div>music</div>
+          <img className="" src="/assets/marriage painting.png"></img>
           <div>영어/한국어</div>
           <div>김선형 & 판데이 수단슈</div>
           <div>결혼합니다</div>
@@ -89,7 +126,9 @@ const App = () => {
           <div> 공유</div>
 
           <form
-            onSubmit={(e) => onSubmitCommentHandler(e, addComment, newComment)}
+            onSubmit={(e) =>
+              onSubmitAddCommentHandler(e, addComment, newComment)
+            }
           >
             <label>성명</label>
             <input ref={nameRef} onChange={(e) => onChangeNameHandler(e)} />
