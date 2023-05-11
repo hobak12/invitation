@@ -8,8 +8,34 @@ import {
 import { debounce } from "lodash";
 
 const App = () => {
+  const { data, isError, isLoading } = useGetCommentQuery();
+  const [name, setName] = useState("");
+  const [context, setContext] = useState("");
+  const [password, setPassword] = useState("");
+  const trimName = name && name.trim();
+  const trimContext = context && context.trim();
+  const trimPassword = password && password.trim();
+
+  console.log(trimName, trimContext, trimPassword);
+
   const nameRef = useRef<any>();
   const contextRef = useRef<any>();
+  const passwordRef = useRef<any>();
+
+  const onChangeNameHandler = debounce((e: React.ChangeEvent<any>) => {
+    e.preventDefault();
+    setName(e.target.value);
+  }, 500);
+
+  const onChangeContextHandler = debounce((e: React.ChangeEvent<any>) => {
+    e.preventDefault();
+    setContext(e.target.value);
+  }, 500);
+
+  const onChangePasswordHandler = debounce((e: React.ChangeEvent<any>) => {
+    e.preventDefault();
+    setPassword(e.target.value);
+  }, 500);
 
   //방명록 추가
   const [addComment] = useAddCommentMutation();
@@ -19,9 +45,18 @@ const App = () => {
     newContent: CommentType
   ) => {
     e.preventDefault();
-    addFn(newContent);
-    nameRef.current.value = "";
-    contextRef.current.value = "";
+    if (trimName && trimContext && trimPassword) {
+      addFn(newContent);
+      nameRef.current.value = "";
+      contextRef.current.value = "";
+      passwordRef.current.value = "";
+      setName("");
+      setPassword("");
+      setContext("");
+      console.log("방명록 추가");
+    } else {
+      alert("빈칸없이 작성해주세요");
+    }
   };
 
   //방명록 삭제
@@ -46,27 +81,12 @@ const App = () => {
     updateFn(id);
   };
 
-  const { data, isError, isLoading } = useGetCommentQuery();
-  const [name, setName] = useState("");
-  const [context, setContext] = useState("");
-  const trimName = name && name.trim();
-  const trimContext = context && context.trim();
-
   const newComment = {
     createdAt: new Date(),
     name: trimName,
     context: trimContext,
+    password: trimPassword,
   };
-
-  const onChangeNameHandler = debounce((e: React.ChangeEvent<any>) => {
-    e.preventDefault();
-    setName(e.target.value);
-  }, 500);
-
-  const onChangeContextHandler = debounce((e: React.ChangeEvent<any>) => {
-    e.preventDefault();
-    setContext(e.target.value);
-  }, 500);
 
   if (isError) {
     return <>Error: 데이터를 불러오지 못했습니다.</>;
@@ -84,6 +104,7 @@ const App = () => {
             <div key={item.id}>
               <div>{item.context}</div>
               <div>{item.name}</div>
+              <div>{item.password}</div>
               <div>
                 {new Date(
                   item.createdAt.seconds * 1000 +
@@ -104,8 +125,6 @@ const App = () => {
               >
                 삭제
               </button>
-              <div>비밀번호</div>
-              <div>{}</div>
             </div>
           );
         })}
@@ -132,6 +151,11 @@ const App = () => {
           >
             <label>성명</label>
             <input ref={nameRef} onChange={(e) => onChangeNameHandler(e)} />
+            <label>비밀번호</label>
+            <input
+              ref={passwordRef}
+              onChange={(e) => onChangePasswordHandler(e)}
+            />
             <label>코멘트</label>
             <textarea
               ref={contextRef}

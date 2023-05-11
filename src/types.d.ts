@@ -8,4 +8,5 @@ declare interface CommentType {
   createdAt: any;
   name: string;
   context: string;
+  password: string;
 }
