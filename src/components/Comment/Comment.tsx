@@ -19,11 +19,6 @@ const Comment = () => {
     setModalOpen(true);
   };
 
-  const closeModal = (e: any) => {
-    e.stopPropagation();
-    setModalOpen(false);
-    navigate(`/`);
-  };
   const onClickMoveToModal = (e: any, id: any) => {
     showModal(e);
     navigate(`/${id}`);
@@ -81,7 +76,7 @@ const Comment = () => {
       setPassword("");
       toggleEdit(id);
     } else {
-      alert("비번이 틀렸습니다");
+      alert("비번이 틀렸슴둥");
     }
   };
 
@@ -106,7 +101,7 @@ const Comment = () => {
     if (pickdata?.password === trimPassword) {
       deleteFn(id);
     } else {
-      alert("비번이 틀렸습니다");
+      alert("비번이 틀렸슴둥");
     }
   };
 
@@ -127,11 +122,11 @@ const Comment = () => {
       <div className="bg-purple-100 ">
         {data?.map((item) => {
           return (
-            <div key={item.id} className="border-2 border-black">
-              <button onClick={(e) => onClickMoveToModal(e, item.id)}>
-                모달
-              </button>
-
+            <div
+              key={item.id}
+              onClick={(e) => onClickMoveToModal(e, item.id)}
+              className="border-2 border-black"
+            >
               <div className={` ${showEdit ? "" : "hidden"} `}>
                 <div>내용:{item.context}</div>
                 <div>성명:{item.name}</div>
@@ -199,7 +194,7 @@ const Comment = () => {
             </div>
           );
         })}
-        <Modal closeModal={closeModal} modalOpen={modalOpen} data={data} />
+        <Modal setModalOpen={setModalOpen} modalOpen={modalOpen} data={data} />
       </div>
       <CommentInput />
     </>
