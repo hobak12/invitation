@@ -49,12 +49,12 @@ export const courseApi = createApi({
       providesTags: ["Comments"],
     }),
     updateComment: builder.mutation({
-      async queryFn({ commentId, newComment, nickname, profileImage }) {
+      async queryFn({ commentId, createdAt, name, context }) {
         try {
           await updateDoc(doc(dbService, "comments", commentId), {
-            comment: newComment,
-            nickname,
-            profileImage,
+            context,
+            name,
+            createdAt,
           });
           return { data: null };
         } catch (error: any) {
