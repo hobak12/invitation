@@ -6,9 +6,11 @@ import {
   useUpdateCommentMutation,
 } from "../../redux/modules/apiSlice";
 import { debounce } from "lodash";
+import { useNavigate } from "react-router-dom";
 
 const Comment = () => {
   const { data, isError, isLoading } = useGetCommentQuery();
+  const navigate = useNavigate();
 
   const [modalOpen, setModalOpen] = useState<boolean>(false);
 
@@ -20,6 +22,11 @@ const Comment = () => {
   const closeModal = (e: any) => {
     e.stopPropagation();
     setModalOpen(false);
+    navigate(`/`);
+  };
+  const onClickMoveToModal = (e: any, id: any) => {
+    showModal(e);
+    navigate(`/${id}`);
   };
 
   const [name, setName] = useState<string>("");
@@ -58,7 +65,7 @@ const Comment = () => {
     id: string | undefined
   ) => {
     e.preventDefault();
-    let pickdata = data?.find((item) => item.id === id);
+    const pickdata = data?.find((item) => item.id === id);
     if (pickdata?.password === trimPassword) {
       updateFn({
         commentId: id,
@@ -95,7 +102,12 @@ const Comment = () => {
     id: string | undefined
   ) => {
     e.preventDefault();
-    deleteFn(id);
+    const pickdata = data?.find((item) => item.id === id);
+    if (pickdata?.password === trimPassword) {
+      deleteFn(id);
+    } else {
+      alert("비번이 틀렸습니다");
+    }
   };
 
   // 삭제토글
@@ -116,7 +128,9 @@ const Comment = () => {
         {data?.map((item) => {
           return (
             <div key={item.id} className="border-2 border-black">
-              <button onClick={showModal}>모달</button>
+              <button onClick={(e) => onClickMoveToModal(e, item.id)}>
+                모달
+              </button>
 
               <div className={` ${showEdit ? "" : "hidden"} `}>
                 <div>내용:{item.context}</div>
@@ -185,7 +199,7 @@ const Comment = () => {
             </div>
           );
         })}
-        <Modal closeModal={closeModal} modalOpen={modalOpen} />
+        <Modal closeModal={closeModal} modalOpen={modalOpen} data={data} />
       </div>
       <CommentInput />
     </>
