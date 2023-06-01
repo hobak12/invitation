@@ -1,8 +1,10 @@
 import { Comment } from "../components/Comment/index";
+import { Music } from "../components/extra";
 const Main = () => {
   return (
     <div className="flex flex-col mx-auto  bg-pink-200 w-[60%] ">
-      <div>music</div>
+      <Music />
+
       <img className="" src="/assets/marriage painting.png"></img>
       <div>영어/한국어</div>
       <div>김선형 & 판데이 수단슈</div>
