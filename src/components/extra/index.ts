@@ -1,3 +1,4 @@
 import Music from "./Music";
+import Language from "./Language";
 
-export { Music };
+export { Music, Language };

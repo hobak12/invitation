@@ -1,17 +1,31 @@
 import { Comment } from "../components/Comment/index";
-import { Music } from "../components/extra";
+import { Music, Language } from "../components/extra";
+import { useTranslation } from "react-i18next";
+
 const Main = () => {
+  const { t } = useTranslation("main");
   return (
     <div className="flex flex-col mx-auto  bg-pink-200 w-[60%] ">
       <Music />
-
+      <Language />
       <img className="" src="/assets/marriage painting.png"></img>
-      <div>영어/한국어</div>
-      <div>김선형 & 판데이 수단슈</div>
-      <div>결혼합니다</div>
-      <div>2023년 9월 15일 토요일 오전 10시 30분</div>
-      <div>세종대왕 기념관 궁중의례원</div>
-      <button>참석여부 조사 모달</button>
+      <div>{t("test")}</div>
+      <div>
+        {t("brideName")} & {t("groomName")}
+      </div>
+      <div>{t("married")}</div>
+      <div>{t("time")}</div>
+
+      <div>{t("place")}</div>
+      <button
+        onClick={() => {
+          window.open(
+            "https://docs.google.com/forms/d/e/1FAIpQLSfWSB34WkeIedPglfTlANpQWqWBSYzUesLuv5c6J9CBWiwlqA/viewform?usp=sf_link"
+          );
+        }}
+      >
+        {t("attendance")}
+      </button>
       <div>갤러리</div>
       <div>방명록</div>
       <div> 마음전하실 곳</div>
