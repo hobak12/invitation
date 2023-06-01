@@ -57,24 +57,33 @@ const CommentInput = () => {
       alert("빈칸없이 작성해주세요");
     }
   };
+
   return (
-    <>
-      {" "}
+    <div>
       <form
         onSubmit={(e) => onSubmitAddCommentHandler(e, addComment, newComment)}
       >
-        <label>성명</label>
-        <input ref={nameRef} onChange={(e) => onChangeNameHandler(e)} />
-        <label>비밀번호</label>
-        <input ref={passwordRef} onChange={(e) => onChangePasswordHandler(e)} />
-        <label>코멘트</label>
+        <input
+          placeholder="성명을 입력해주세요"
+          ref={nameRef}
+          onChange={(e) => onChangeNameHandler(e)}
+        />
+
+        <input
+          placeholder="비밀번호를 입력해주세요"
+          ref={passwordRef}
+          onChange={(e) => onChangePasswordHandler(e)}
+        />
+
         <textarea
+          placeholder="방명록을 입력해주세요"
           ref={contextRef}
           onChange={(e) => onChangeContextHandler(e)}
         />
-        <button>입력</button>
+        <button className="button">입력</button>
       </form>
-    </>
+      <button className="button">닫기</button>
+    </div>
   );
 };
 export default CommentInput;
