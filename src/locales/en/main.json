@@ -1,9 +1,14 @@
 {
-  "test": "hi",
   "brideName": "Seonhyeong Kim",
   "groomName": "Sudhanshu Pandey",
   "married": "Getting Married",
   "time": "2:00PM, Sunday, 24th September 2023",
   "place": "Memorial Hall of King Sejong, Wedding Hall",
-  "attendance": "Attendance Status Survey"
+  "attendance": "Attendance Status Survey",
+  "gallery": "Gallery",
+  "comment": "Guest Book",
+  "account": "Account Number",
+  "calender": "Calender",
+  "map": "Way To Come",
+  "share": "Share"
 }

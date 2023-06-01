@@ -11,10 +11,18 @@ const Language = () => {
   );
   return (
     <div>
-      <button onClick={() => toggleLocales("en-US")} title="영어로 바꾸기">
+      <button
+        className="button"
+        onClick={() => toggleLocales("en-US")}
+        title="영어로 바꾸기"
+      >
         En
       </button>
-      <button onClick={() => toggleLocales("ko-KR")} title="한글로 바꾸기">
+      <button
+        className="button"
+        onClick={() => toggleLocales("ko-KR")}
+        title="한글로 바꾸기"
+      >
         Ko
       </button>
     </div>
