@@ -20,6 +20,9 @@ module.exports = {
       // => @media (max-width: 639px) { ... }
     },
     extend: {},
+    fontFamily: {
+      basic: ["Noto Serif KR", "serif"],
+    },
   },
   variants: {
     extend: {},

@@ -1,4 +1,4 @@
 import Music from "./Music";
 import Language from "./Language";
-
-export { Music, Language };
+import Calendar from "./Calendar";
+export { Music, Language, Calendar };
