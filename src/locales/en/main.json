@@ -1,6 +1,8 @@
 {
   "brideName": "Seonhyeong Kim",
   "groomName": "Sudhanshu Pandey",
+  "brideNameShort": "Seonhyeong",
+  "groomNameShort": "Sudhanshu",
   "married": "Getting Married",
   "time": "2:00PM, Sunday, 24th September 2023",
   "place": "Memorial Hall of King Sejong, Wedding Hall",
@@ -10,5 +12,18 @@
   "account": "Account Number",
   "calender": "Calender",
   "map": "Way To Come",
-  "share": "Share"
+  "share": "Share",
+  "and": "and",
+  "groomFatherName": "Krishna Mohan Sharma",
+  "groomMotherName": "Rekha Rani Sharma",
+  "brideFatherName": "Wonjung Kim",
+  "brideMotherName": "Bongseon Lee",
+  "daughter": "Daughter",
+  "son": "Son",
+  "'s": "'s",
+  "d-day": "Sudhanshu and Seonhyeong's Wedding ",
+  "day": "-day",
+  "left": "left.",
+  "pass": "passed",
+  "todayIs": "Today is"
 }

@@ -1,12 +1,13 @@
-import { Comment } from "../components/Comment/index";
+import { Comment } from "../components/comment/index";
 import { Music, Language, Calendar } from "../components/extra";
+import { Clipboards } from "../components/copy";
 import { useTranslation } from "react-i18next";
 import { Gallery } from "../components/Gallery";
 
 const Main = () => {
   const { t } = useTranslation("main");
   return (
-    <div className="bg-contain font-basic text-lg mx-auto w-[600px] h-[100%] md:w-full shadow-xl bg-[url('https://user-images.githubusercontent.com/117059420/243442273-a37a5a10-c5fe-44cc-bc3d-4d04ea20ba58.jpg')]">
+    <div className="bg-orange-100 bg-opacity-20 font-basic text-lg mx-auto w-[700px] h-[100%] md:w-full shadow-xl ')]">
       <div className="flex flex-col items-center">
         <div className="flex items-center mt-2  w-full justify-between">
           <Language />
@@ -14,7 +15,7 @@ const Main = () => {
         </div>
         <div className="flex items-baseline mt-[8%] mb-[4%] ml-8">
           <div className="text-xl mr-2">{t("brideName")} </div>
-          <div className="text-xs mr-2 ">그리고</div>
+          <div className="text-xs mr-2 ">{t("and")}</div>
           <div className="text-xl"> {t("groomName")}</div>
         </div>
         <div className="text-2xl">{t("married")}</div>
@@ -38,20 +39,21 @@ const Main = () => {
         >
           {t("attendance")}
         </button>
-        <div>판데이 모한 , 레카의 아들 판데이 수단슈</div>
-        <div>김원중, 이봉선의 딸 김선형</div>
-        <div>{t("gallery")}</div>
+        <div>
+          {t("groomFatherName")}, {t("groomMotherName")}
+          {t("'s")} {t("son")} {t("groomName")}
+        </div>
+        <div>
+          {t("brideFatherName")}, {t("brideMotherName")} {t("'s")}{" "}
+          {t("daughter")} {t("brideName")}
+        </div>
         <Gallery />
         <Calendar />
         <div>{t("map")} </div>
         <div>{t("share")}</div>
         <div className="">{t("comment")}</div>
         <Comment />
-        <button>신랑측 연락처</button>
-        <button>신부측 연락처</button>
-        <div>{t("account")}</div>
-        <button>신랑측 계좌번호 </button>
-        <button>신부측 계좌번호 </button>
+        <Clipboards />
       </div>
     </div>
   );

@@ -1,4 +1,4 @@
-import { CommentInput } from "../Comment/index";
+import { CommentInput } from "./index";
 import { useState, useRef, useEffect } from "react";
 import {
   useGetCommentQuery,
