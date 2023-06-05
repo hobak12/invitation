@@ -3,7 +3,9 @@ import GalleryModal from "./GalleryModal";
 import SliderData from "./SliderData";
 import { BsChevronDown, BsChevronUp } from "react-icons/bs";
 const Gallery = () => {
+  const [current, setCurrent] = useState<number>(0);
   const [open, setOpen] = useState<boolean>(false);
+  const [openModal, setOpenModal] = useState<boolean>(false);
   const element = useRef<HTMLDivElement>(null);
 
   const onMoveToElement = () => {
@@ -16,17 +18,27 @@ const Gallery = () => {
     setOpen((current) => !current);
   };
 
+  const onClickToggleGalleryModal = (index: number) => {
+    setOpenModal((current) => !current);
+    setCurrent(index);
+  };
+
   const onClickClose = () => {
     onMoveToElement();
     onClickToggleGallery();
   };
+
   return (
     <div>
       <div className={`${open ? "" : "h-[500px]"}  overflow-hidden`}>
         <div ref={element} className="flex flex-wrap">
           {SliderData.map((slide, index) => {
             return (
-              <div className="w-[50%] " key={index}>
+              <div
+                className="w-[50%] "
+                key={index}
+                onClick={() => onClickToggleGalleryModal(index)}
+              >
                 <img
                   className="h-[250px] w-[260px] rounded-md m-1 object-cover"
                   src={slide.image}
@@ -37,16 +49,24 @@ const Gallery = () => {
           })}
         </div>
       </div>
-      <button
-        onClick={onClickToggleGallery}
-        className={`${open ? "hidden" : ""}`}
-      >
-        <BsChevronDown />
-      </button>
-      <button onClick={onClickClose} className={`${open ? "" : "hidden"} `}>
-        <BsChevronUp />
-      </button>
-      <GalleryModal SliderData={SliderData} />
+      <div className=" w-[20px] mx-auto">
+        <button
+          onClick={onClickToggleGallery}
+          className={`${open ? "hidden" : ""}`}
+        >
+          <BsChevronDown />
+        </button>
+        <button onClick={onClickClose} className={`${open ? "" : "hidden"} `}>
+          <BsChevronUp />
+        </button>
+      </div>
+      <GalleryModal
+        SliderData={SliderData}
+        onClickToggleGalleryModal={onClickToggleGalleryModal}
+        openModal={openModal}
+        current={current}
+        setCurrent={setCurrent}
+      />
     </div>
   );
 };

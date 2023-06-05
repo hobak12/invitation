@@ -6,7 +6,7 @@ import { Gallery } from "../components/Gallery";
 const Main = () => {
   const { t } = useTranslation("main");
   return (
-    <div className="font-basic text-lg mx-auto  w-[35%] shadow-xl" >
+    <div className="bg-contain font-basic text-lg mx-auto w-[600px] h-[100%] md:w-full shadow-xl bg-[url('https://user-images.githubusercontent.com/117059420/243442273-a37a5a10-c5fe-44cc-bc3d-4d04ea20ba58.jpg')]">
       <div className="flex flex-col items-center">
         <div className="flex items-center mt-2  w-full justify-between">
           <Language />

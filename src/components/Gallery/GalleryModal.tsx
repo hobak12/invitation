@@ -1,7 +1,12 @@
 import { useState } from "react";
 import { MdArrowBackIosNew, MdArrowForwardIos, MdClose } from "react-icons/md";
-const GalleryModal = ({ SliderData }: any) => {
-  const [current, setCurrent] = useState<number>(0);
+const GalleryModal = ({
+  SliderData,
+  onClickToggleGalleryModal,
+  openModal,
+  current,
+  setCurrent,
+}: any) => {
   const length = SliderData.length;
 
   const nextSlide = () => {
@@ -18,14 +23,31 @@ const GalleryModal = ({ SliderData }: any) => {
   }
 
   return (
-    <div>
-      <div className="flex">
-        {" "}
-        <MdArrowBackIosNew />
-        <MdArrowForwardIos />
-        <MdClose />{" "}
+    <div
+      className={`${
+        openModal ? "" : "hidden"
+      } bg-pink-200 p-2 w-[320px] h-fit fixed top-0 left-0 right-0 bottom-0 m-auto `}
+    >
+      {SliderData.map((slide, index) => {
+        return (
+          <div key={index}>
+            {index === current && (
+              <img
+                src={slide.image}
+                alt="gallery modal"
+                className="  object-cover"
+              />
+            )}
+          </div>
+        );
+      })}
+      <div className="flex justify-between">
+        <div className="flex">
+          <MdArrowBackIosNew onClick={prevSlide} />
+          <MdArrowForwardIos onClick={nextSlide} />
+        </div>
+        <MdClose onClick={onClickToggleGalleryModal} />
       </div>
-      갤러리 모달
     </div>
   );
 };
