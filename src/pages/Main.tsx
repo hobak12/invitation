@@ -1,29 +1,26 @@
 import { Comment } from "../components/Comment/index";
 import { Music, Language, Calendar } from "../components/extra";
 import { useTranslation } from "react-i18next";
+import { Gallery } from "../components/Gallery";
 
 const Main = () => {
   const { t } = useTranslation("main");
   return (
-    <div className="font-basic text-lg mx-auto  w-[40%] shadow-xl ">
+    <div className="font-basic text-lg mx-auto  w-[35%] shadow-xl" >
       <div className="flex flex-col items-center">
-        <div className="flex items-center gap-6 mt-2  bg-yellow-100">
+        <div className="flex items-center mt-2  w-full justify-between">
           <Language />
           <Music />
         </div>
-        <div className="flex items-baseline mt-[8%] mb-[4%] ">
-          <div className="text-lg mr-2">{t("brideName")} </div>
+        <div className="flex items-baseline mt-[8%] mb-[4%] ml-8">
+          <div className="text-xl mr-2">{t("brideName")} </div>
           <div className="text-xs mr-2 ">그리고</div>
-          <div className="text-lg"> {t("groomName")}</div>
+          <div className="text-xl"> {t("groomName")}</div>
         </div>
-
         <div className="text-2xl">{t("married")}</div>
         <img className="w-[90%] my-[7%]" src="/assets/marriage.png"></img>
-
         <div>{t("time")}</div>
-
         <div className="mb-[10%]">{t("place")}</div>
-
         <div className="text-center ">
           인연으로 만나 부부가 되는 날,
           <br />
@@ -31,7 +28,6 @@ const Main = () => {
           <br />
           결혼식은 한국 전통혼례로 진행할 예정입니다.
         </div>
-
         <button
           className="button my-[10%]"
           onClick={() => {
@@ -44,19 +40,13 @@ const Main = () => {
         </button>
         <div>판데이 모한 , 레카의 아들 판데이 수단슈</div>
         <div>김원중, 이봉선의 딸 김선형</div>
-
         <div>{t("gallery")}</div>
-        <div>
-          <img src="" />
-        </div>
-
+        <Gallery />
         <Calendar />
-
         <div>{t("map")} </div>
         <div>{t("share")}</div>
         <div className="">{t("comment")}</div>
         <Comment />
-
         <button>신랑측 연락처</button>
         <button>신부측 연락처</button>
         <div>{t("account")}</div>
