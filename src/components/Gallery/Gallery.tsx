@@ -35,12 +35,12 @@ const Gallery = () => {
           {SliderData.map((slide, index) => {
             return (
               <div
-                className="w-[50%] "
+                className="w-[50%]"
                 key={index}
                 onClick={() => onClickToggleGalleryModal(index)}
               >
                 <img
-                  className="h-[250px] w-[260px] rounded-md m-1 object-cover"
+                  className="h-[350px] w-[340px] rounded-md m-1 object-cover"
                   src={slide.image}
                   alt="갤러리 이미지"
                 />
@@ -49,15 +49,15 @@ const Gallery = () => {
           })}
         </div>
       </div>
-      <div className=" w-[20px] mx-auto">
+      <div className=" w-[20px] mx-auto mt-4 ">
         <button
           onClick={onClickToggleGallery}
           className={`${open ? "hidden" : ""}`}
         >
-          <BsChevronDown />
+          <BsChevronDown className="text-4xl " />
         </button>
         <button onClick={onClickClose} className={`${open ? "" : "hidden"} `}>
-          <BsChevronUp />
+          <BsChevronUp className="text-4xl " />
         </button>
       </div>
       <GalleryModal

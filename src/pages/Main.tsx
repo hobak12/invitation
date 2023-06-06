@@ -39,13 +39,17 @@ const Main = () => {
         >
           {t("attendance")}
         </button>
-        <div>
-          {t("groomFatherName")}, {t("groomMotherName")}
-          {t("'s")} {t("son")} {t("groomName")}
-        </div>
-        <div>
-          {t("brideFatherName")}, {t("brideMotherName")} {t("'s")}{" "}
-          {t("daughter")} {t("brideName")}
+        <div className="flex gap-11">
+          <div className="text-center m-5 ">
+            {t("groomFatherName")}, {t("groomMotherName")}
+            {t("'s")} {t("son")}
+            <div className="text-xl my-2"> {t("groomName")}</div>
+          </div>
+          <div className="text-center m-5 ">
+            {t("brideFatherName")}, {t("brideMotherName")}
+            {t("'s")} {t("daughter")}
+            <div className="text-xl my-2">{t("brideName")}</div>
+          </div>
         </div>
         <Gallery />
         <Calendar />
