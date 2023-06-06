@@ -11,11 +11,11 @@ const Calendar = () => {
     <>
       <img className="w-[80%]" alt="calendar" src="/assets/calendar.png" />
       {h === 0 ? (
-        <div className="bg-white w-full text-center py-1">
+        <div className="bg-white w-full text-center py-2">
           오늘은 수단슈와 선형의 결혼식입니다!
         </div>
       ) : (
-        <div className="bg-white w-full text-center py-1">
+        <div className="bg-white w-full text-center py-2">
           {h > 0
             ? `수단슈와 선형의 결혼식이 ${h}일 남았습니다`
             : "2023년 9월 24일, 둘이 하나가 되었습니다"}

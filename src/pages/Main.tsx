@@ -1,5 +1,5 @@
 import { Comment } from "../components/comment/index";
-import { Music, Language, Calendar } from "../components/extra";
+import { Music, Language, Calendar, Map } from "../components/extra";
 import { Clipboards } from "../components/copy";
 import { useTranslation } from "react-i18next";
 import { Gallery } from "../components/Gallery";
@@ -7,7 +7,7 @@ import { Gallery } from "../components/Gallery";
 const Main = () => {
   const { t } = useTranslation("main");
   return (
-    <div className="bg-orange-100 bg-opacity-20 font-basic text-lg mx-auto w-[700px] h-[100%] md:w-full shadow-xl ')]">
+    <div className="bg-orange-100 bg-opacity-20 font-basic text-lg mx-auto w-[650px] h-[100%] md:w-full shadow-xl ')]">
       <div className="flex flex-col items-center">
         <div className="flex items-center mt-2  w-full justify-between">
           <Language />
@@ -19,7 +19,11 @@ const Main = () => {
           <div className="text-xl"> {t("groomName")}</div>
         </div>
         <div className="text-2xl">{t("married")}</div>
-        <img className="w-[90%] my-[7%]" src="/assets/marriage.png"></img>
+        <img
+          className="w-[90%] my-[7%]"
+          alt="marriage"
+          src="/assets/marriage.png"
+        />
         <div>{t("time")}</div>
         <div className="mb-[10%]">{t("place")}</div>
         <div className="text-center ">
@@ -27,7 +31,7 @@ const Main = () => {
           <br />
           소중한 분들을 초대합니다.
           <br />
-          결혼식은 한국 전통혼례로 진행할 예정입니다.
+          결혼식은 한국 전통혼례로 야외에서 진행할 예정입니다.
         </div>
         <button
           className="button my-[10%]"
@@ -56,9 +60,11 @@ const Main = () => {
         <div>{t("map")} </div>
         <div>{t("share")}</div>
         <div className="">{t("comment")}</div>
+
         <Comment />
-        <Clipboards />
       </div>
+      <Map />
+      <Clipboards />
     </div>
   );
 };

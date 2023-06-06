@@ -5,8 +5,9 @@
 
 .button {
   background-color: lightsalmon;
-  border-radius: 10%;
+  border-radius: 5px;
   padding: 2px;
   width: max-content;
   border: solid 1px orange;
+  margin-right: 5px;
 }

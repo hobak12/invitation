@@ -1,5 +1,5 @@
-import { useState } from "react";
 import { MdArrowBackIosNew, MdArrowForwardIos, MdClose } from "react-icons/md";
+
 const GalleryModal = ({
   SliderData,
   onClickToggleGalleryModal,
