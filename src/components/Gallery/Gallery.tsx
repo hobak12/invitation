@@ -2,7 +2,7 @@ import { useState, useRef } from "react";
 import GalleryModal from "./GalleryModal";
 import SliderData from "./SliderData";
 
-import { FaAngleDown, FaAngleUp } from "react-icons/fa";
+import { BsChevronDown, BsChevronUp } from "react-icons/bs";
 const Gallery = () => {
   const [current, setCurrent] = useState<number>(0);
   const [open, setOpen] = useState<boolean>(false);
@@ -50,15 +50,15 @@ const Gallery = () => {
           })}
         </div>
       </div>
-      <div className=" w-[20px] mx-auto mt-4 ">
+      <div className=" w-[20px] mx-auto m-5 ">
         <button
           onClick={onClickToggleGallery}
           className={`${open ? "hidden" : ""}`}
         >
-          <FaAngleDown className="text-4xl " />
+          <BsChevronDown className="text-4xl " />
         </button>
         <button onClick={onClickClose} className={`${open ? "" : "hidden"} `}>
-          <FaAngleUp className="text-4xl " />
+          <BsChevronUp className="text-4xl " />
         </button>
       </div>
       <GalleryModal

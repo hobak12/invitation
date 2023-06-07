@@ -30,6 +30,19 @@ const Map = () => {
     });
     // 마커가 지도 위에 표시되도록 설정합니다
     marker.setMap(map);
+
+    var iwContent =
+        '<div style="font-size:14px; padding-left:4px;">세종대왕기념관 웨딩홀</div>', // 인포윈도우에 표출될 내용으로 HTML 문자열이나 document element가 가능합니다
+      iwPosition = new kakao.maps.LatLng(37.59073497281094, 127.04358664439376); //인포윈도우 표시 위치입니다
+
+    // 인포윈도우를 생성하고 지도에 표시합니다
+    var infowindow = new kakao.maps.InfoWindow({
+      map: map, // 인포윈도우가 표시될 지도
+      position: iwPosition,
+      content: iwContent,
+    });
+    // 마커 위에 인포윈도우를 표시합니다. 두번째 파라미터인 marker를 넣어주지 않으면 지도 위에 표시됩니다
+    infowindow.open(map, marker);
   }, []);
 
   return (
