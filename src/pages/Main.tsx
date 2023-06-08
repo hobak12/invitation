@@ -1,4 +1,5 @@
 import { Comment } from "../components/comment/index";
+import { Share } from "../components/share";
 import { Music, Language, Calendar, Map } from "../components/extra";
 import { Clipboards } from "../components/copy";
 import { useTranslation } from "react-i18next";
@@ -56,15 +57,15 @@ const Main = () => {
           </div>
         </div>
         <Gallery />
-        <Calendar />
-        <div>{t("map")} </div>
-        <div>{t("share")}</div>
+        <Calendar t={t} />
+
         <div className="">{t("comment")}</div>
 
         <Comment />
       </div>
-      <Map />
+      <Map t={t} />
       <Clipboards />
+      <Share />
     </div>
   );
 };
