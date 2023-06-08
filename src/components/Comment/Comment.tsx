@@ -1,91 +1,13 @@
-import { CommentInput } from "./index";
+import { CommentInput, CommentEditModal, CommentDeleteModal } from "./index";
 import { useState, useRef, useEffect } from "react";
-import {
-  useGetCommentQuery,
-  useDeleteCommentMutation,
-  useUpdateCommentMutation,
-} from "../../redux/modules/apiSlice";
-
-import { debounce } from "lodash";
+import { useGetCommentQuery } from "../../redux/modules/apiSlice";
+import { useNavigate } from "react-router-dom";
 
 const Comment = () => {
-  const [test, setTest] = useState("");
+  const navigate = useNavigate();
   const { data, isError, isLoading } = useGetCommentQuery();
-
-  const [name, setName] = useState<string>("");
-  const [context, setContext] = useState<string>("");
-  const [password, setPassword] = useState<string>("");
-  const trimName = name && name.trim();
-  const trimContext = context && context.trim();
-
-  const nameRef = useRef<any>();
-  const contextRef = useRef<any>();
-  const passwordRef = useRef<any>();
-
-  const onChangeNameHandler = debounce((e: React.ChangeEvent<any>) => {
-    e.preventDefault();
-    setName(e.target.value);
-  }, 500);
-
-  const onChangeContextHandler = debounce((e: React.ChangeEvent<any>) => {
-    e.preventDefault();
-    setContext(e.target.value);
-  }, 500);
-
-  const onChangePasswordHandler = debounce((e: React.ChangeEvent<any>) => {
-    e.preventDefault();
-    setPassword(e.target.value);
-  }, 500);
-
-  //방명록 수정
-  const [showEdit, setShowEdit] = useState<boolean>(true);
-
-  const [updateComment] = useUpdateCommentMutation();
-  const onClickUpdateCommentHandler = (
-    e: React.MouseEvent<HTMLButtonElement, MouseEvent>,
-    updateFn: any,
-    id: any
-  ) => {
-    e.preventDefault();
-
-    updateFn({
-      commentId: id,
-      createdAt: new Date(),
-      name: trimName,
-      context: trimContext,
-    });
-  };
-
-  //수정 토글
-  const openEdit = (e: any) => {
-    setTest(e.target.id);
-    const editData = data?.find((item: any) => item.id === e.target.id);
-  };
-
-  const closeEdit = (e: any) => {
-    setTest("");
-  };
-
-  // 방명록 삭제
-  const [showDelete, setShowDelete] = useState<boolean>(true);
-  const [deleteComment] = useDeleteCommentMutation();
-  const onClickDeleteCommentHandler = (
-    e: React.MouseEvent<HTMLButtonElement, MouseEvent>,
-    deleteFn: (id: string | undefined) => void,
-    id: any
-  ) => {
-    e.preventDefault();
-
-    deleteFn(id);
-  };
-
-  useEffect(() => {}, [test]);
-
-  // 삭제토글
-  const toggleDelete = () => {
-    setShowDelete((current) => !current);
-  };
-
+  const [openEditModal, setOpenEditModal] = useState<boolean>(false);
+  const [openDeleteModal, setOpenDeleteModal] = useState<boolean>(false);
   if (isError) {
     return <>Error: 데이터를 불러오지 못했습니다.</>;
   }
@@ -93,6 +15,17 @@ const Comment = () => {
   if (isLoading) {
     return <>loading...</>;
   }
+
+  const onClickOpenEditModal = (id: any) => {
+    setOpenEditModal(true);
+    navigate(`${id}`);
+  };
+
+  const onClickOpenDeleteModal = (id: any) => {
+    setOpenDeleteModal(true);
+    navigate(`${id}`);
+  };
+
   return (
     <div className="mb-[20%]">
       <CommentInput />
@@ -134,13 +67,14 @@ const Comment = () => {
                   <button
                     id={item.id}
                     className="commentButton"
-                    onClick={(e) => {
-                      openEdit(e);
-                    }}
+                    onClick={() => onClickOpenEditModal(item.id)}
                   >
                     수정
                   </button>
-                  <button className="commentButton" onClick={toggleDelete}>
+                  <button
+                    className="commentButton"
+                    onClick={() => onClickOpenDeleteModal(item.id)}
+                  >
                     삭제
                   </button>
                 </div>
@@ -149,6 +83,16 @@ const Comment = () => {
           );
         })}
       </div>
+      <CommentEditModal
+        data={data}
+        setOpenEditModal={setOpenEditModal}
+        openEditModal={openEditModal}
+      />
+      <CommentDeleteModal
+        data={data}
+        setOpenDeleteModal={setOpenDeleteModal}
+        openDeleteModal={openDeleteModal}
+      />
     </div>
   );
 };

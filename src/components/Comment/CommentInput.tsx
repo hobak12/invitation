@@ -17,17 +17,17 @@ const CommentInput = () => {
   const onChangeNameHandler = debounce((e: React.ChangeEvent<any>) => {
     e.preventDefault();
     setName(e.target.value);
-  }, 500);
+  }, 200);
 
   const onChangeContextHandler = debounce((e: React.ChangeEvent<any>) => {
     e.preventDefault();
     setContext(e.target.value);
-  }, 500);
+  }, 200);
 
   const onChangePasswordHandler = debounce((e: React.ChangeEvent<any>) => {
     e.preventDefault();
     setPassword(e.target.value);
-  }, 500);
+  }, 200);
 
   const newComment = {
     createdAt: new Date(),
@@ -66,7 +66,7 @@ const CommentInput = () => {
       <div className="block sm:flex p-1  sm:w-full w-[20%] ">
         <input
           className="input"
-          placeholder="성명"
+          placeholder="이름"
           ref={nameRef}
           onChange={(e) => onChangeNameHandler(e)}
         />

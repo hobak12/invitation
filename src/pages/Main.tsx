@@ -1,12 +1,22 @@
+import { useEffect } from "react";
 import { Comment } from "../components/comment/index";
 import { Share } from "../components/share";
 import { Music, Language, Calendar, Map } from "../components/extra";
 import { Clipboards } from "../components/copy";
 import { useTranslation } from "react-i18next";
 import { Gallery } from "../components/Gallery";
+import { useParams, useNavigate } from "react-router-dom";
 
 const Main = () => {
+  const navigate = useNavigate();
+  const paramId = useParams().id;
+
   const { t } = useTranslation("main");
+  // useEffect(() => {
+  //   if (paramId) {
+  //     navigate("/");
+  //   }
+  // }, [paramId]);
 
   return (
     <div className="bg-orange-100 bg-opacity-10 font-basic text-lg mx-auto w-[600px] h-[100%] sm:w-full shadow-xl ')]">
