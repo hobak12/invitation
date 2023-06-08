@@ -7,8 +7,9 @@ import { Gallery } from "../components/Gallery";
 
 const Main = () => {
   const { t } = useTranslation("main");
+
   return (
-    <div className="bg-orange-100 bg-opacity-20 font-basic text-lg mx-auto w-[600px] h-[100%] sm:w-full shadow-xl ')]">
+    <div className="bg-orange-100 bg-opacity-10 font-basic text-lg mx-auto w-[600px] h-[100%] sm:w-full shadow-xl ')]">
       <div className="flex flex-col items-center">
         <div className="flex items-center mt-2  w-full justify-between">
           <Language />
@@ -27,7 +28,7 @@ const Main = () => {
           alt="marriage"
           src="/assets/marriage.png"
         />
-        <div className="mb-[5%] border-2  p-4 text-center bg-white rounded-lg">
+        <div className="mb-[5%] border-2 border-pink-200  p-4 text-center bg-white rounded-lg">
           <div className="mb-2">{t("time")}</div>
           <div>{t("place")}</div>
         </div>
@@ -48,7 +49,7 @@ const Main = () => {
         </div>
 
         <button
-          className="bg-[#ffdadf] my-[15%] rounded py-1 px-2 font-semibold text-xl shadow-sm hover:shadow-md"
+          className="bg-[#ffb6c1] my-[15%] rounded py-1 px-2 font-semibold text-xl shadow-sm hover:shadow-md"
           onClick={() => {
             window.open(
               "https://docs.google.com/forms/d/e/1FAIpQLSfWSB34WkeIedPglfTlANpQWqWBSYzUesLuv5c6J9CBWiwlqA/viewform?usp=sf_link"
@@ -57,23 +58,26 @@ const Main = () => {
         >
           {t("attendance")}
         </button>
-        <div className="sm:flex-col flex gap-12 mb-[20%] text-center">
-          <div className="">
-            <div>
-              {t("groomFatherName")} · {t("groomMotherName")}
-            </div>
-            <div className="text-sm mx-1 mt-2 mb-1 ">
-              {t("'s")} {t("son")}
+        <div className=" mb-[20%] text-center leading-loose">
+          <div className="mb-[10%]">
+            <div className="flex justify-center items-baseline">
+              <div>
+                {t("groomFatherName")} · {t("groomMotherName")}
+              </div>
+              <div className="text-xs mx-1 text-[#999]">
+                {t("'s")} {t("son")}
+              </div>
             </div>
             <div className="my-2 "> {t("groomName")}</div>
           </div>
-
-          <div className="">
-            <div>
-              {t("brideFatherName")} · {t("brideMotherName")}
-            </div>
-            <div className="text-sm mx-1 mt-2 mb-1 ">
-              {t("'s")} {t("daughter")}
+          <div>
+            <div className="flex justify-center items-baseline ">
+              <div>
+                {t("brideFatherName")} · {t("brideMotherName")}
+              </div>
+              <div className="text-xs mx-1 text-[#999]">
+                {t("'s")} {t("daughter")}
+              </div>
             </div>
             <div className=" my-2">{t("brideName")}</div>
           </div>
@@ -87,7 +91,7 @@ const Main = () => {
       </div>
       <Map t={t} />
       <Clipboards />
-      <Share />
+      <Share t={t} />
     </div>
   );
 };

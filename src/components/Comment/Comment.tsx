@@ -96,7 +96,7 @@ const Comment = () => {
   return (
     <div className="mb-[20%]">
       <CommentInput />
-      <div className="bg-purple-100 ">
+      <div className="bg-orang-200 p-2  ">
         {data?.map((item) => {
           return (
             <div key={item.id} className="border-2 bg-white rounded-lg ">

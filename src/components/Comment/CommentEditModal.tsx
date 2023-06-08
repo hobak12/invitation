@@ -6,7 +6,7 @@ import {
 } from "../../redux/modules/apiSlice";
 import { debounce } from "lodash";
 
-const Modal = ({ setModalOpen, modalOpen, data }: any) => {
+const CommentEditModal = ({ setModalOpen, modalOpen, data }: any) => {
   const navigate = useNavigate();
 
   const closeModal = (e: any) => {
@@ -207,4 +207,4 @@ const Modal = ({ setModalOpen, modalOpen, data }: any) => {
   );
 };
 
-export default Modal;
+export default CommentEditModal;

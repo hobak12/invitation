@@ -59,31 +59,35 @@ const CommentInput = () => {
   };
 
   return (
-    <div>
-      <form
-        onSubmit={(e) => onSubmitAddCommentHandler(e, addComment, newComment)}
-      >
+    <form
+      className="flex sm:block border-pink-200 rounded-md m-2  border-2"
+      onSubmit={(e) => onSubmitAddCommentHandler(e, addComment, newComment)}
+    >
+      <div className="block sm:flex p-2  sm:w-full w-[20%] ">
         <input
-          placeholder="성명을 입력해주세요"
+          className="input"
+          placeholder="성명"
           ref={nameRef}
           onChange={(e) => onChangeNameHandler(e)}
         />
-
         <input
-          placeholder="비밀번호를 입력해주세요"
+          className="input"
+          placeholder="비밀번호"
           ref={passwordRef}
           onChange={(e) => onChangePasswordHandler(e)}
         />
+      </div>
 
+      <div className="p-2 w-full ">
         <textarea
-          placeholder="방명록을 입력해주세요"
+          className="textArea"
+          placeholder="방명록을 입력해주세요."
           ref={contextRef}
           onChange={(e) => onChangeContextHandler(e)}
         />
-        <button className="button">입력</button>
-      </form>
-      <button className="button">닫기</button>
-    </div>
+        <button className="button h-fit ">입력</button>
+      </div>
+    </form>
   );
 };
 export default CommentInput;

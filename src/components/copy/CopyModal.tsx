@@ -17,6 +17,7 @@ const CopyModal = ({
       {accountData.map((item: any, index: number) => {
         return (
           <div
+            key={index}
             className={`${
               openModal ? "" : "hidden"
             } bg-pink-300 rounded-lg fixed top-0 bottom-0 left-0 right-0 h-fit w-[200px] m-auto`}

@@ -47,16 +47,16 @@ const Map = ({ t }: any) => {
 
   return (
     <div className="mb-[20%] ">
-      <div className="text-center ">{t("map")}</div>
-      <div className="border-2 text-center">
-        <div>세종대왕 기념관 웨딩홀 (야외)</div>
+      <div className=" title  ">{t("map")}</div>
+      {/* <div className="border-2 text-center w-[98%] mx-auto p-2 my-[2%]  rounded-md">
+        <div>세종대왕 기념관 웨딩홀</div>
         <div>서울 동대문구 회기로 56</div>
         <div>Tel:02-960-1700</div>
-      </div>
+      </div> */}
       <div id="map" className="w-full h-[400px]"></div>
-      <div className="flex justify-center bg-pink-200 my-3">
+      <div className="flex justify-center gap-10  mt-[2%] mb-[5%]">
         <button
-          className="button   flex"
+          className="mapButton flex"
           onClick={() => {
             window.open(
               "https://map.kakao.com/link/to/세종대왕기념관웨딩홀,37.59073497281094,127.04358664439376"
@@ -68,10 +68,10 @@ const Map = ({ t }: any) => {
             alt="naver"
             src="https://self.cryucompany.com/kakao-navi.png"
           />
-          <div>카카오맵 길찾기</div>
+          <div>카카오맵</div>
         </button>
         <button
-          className="button flex"
+          className="mapButton flex"
           onClick={() => {
             window.open(
               "https://map.naver.com/v5/?c=15,0,0,0,dh&lng=127.04358664439376&lat=37.59073497281094&type=0&title=세종대왕기념관웨딩홀"
@@ -83,118 +83,128 @@ const Map = ({ t }: any) => {
             alt="naver"
             src="https://self.cryucompany.com/naver-map.png"
           />
-          <div>네이버 지도 길찾기</div>
+          <div>네이버 지도</div>
         </button>
       </div>
-      <div className="bg-purple-100 mx-[10%]">
-        <div> 버스정류장</div>
-
-        <div>
-          <div className="flex justify-between">
-            <div className="flex">
-              <a
-                className="text-blue-600"
-                href="https://map.kakao.com/?busStopId=11060701007"
-              >
-                세종대왕기념관
-              </a>
-              <div>(06279) | 97m </div>
-            </div>
-            <div className="mr-8">
-              <div className="flex items-center">
-                <div className="busBlue">간선</div>
-                <div>201</div>
-              </div>
-              <div className="flex items-center">
-                <div className="busGreen">지선</div>
-                <div>1226</div>
-              </div>
-            </div>
+      <div className="w-[80%] mx-auto text-base leading-loose">
+        <div className="border-b-2  mb-[5%]">
+          <div>세종대왕 기념관 웨딩홀</div>
+          <div>서울 동대문구 회기로 56</div>
+          <div>Tel:02-960-1700</div>
+          <div className="font-semibold mb-2">
+            주차 공간<span className="font-medium"> p1: 150대 </span>
           </div>
         </div>
-
         <div>
-          <div className="flex justify-between my-3">
-            <div className="flex">
-              <a
-                className="text-blue-600"
-                href="https://map.kakao.com/?busStopId=11060701008"
-              >
-                세종대왕기념관
-              </a>
-              <div>(06278) | 148m</div>
-            </div>
-            <div className="mr-8">
-              <div className="flex items-center">
-                <div className="busBlue">간선</div>
-                <div>201</div>
+          <div className="font-semibold mb-2"> 버스정류장</div>
+
+          <div>
+            <div className="flex justify-between">
+              <div className="flex">
+                <a
+                  className="text-blue-600"
+                  href="https://map.kakao.com/?busStopId=11060701007"
+                >
+                  세종대왕기념관
+                </a>
+                <div>(06279) | 97m </div>
               </div>
-              <div className="flex items-center">
-                <div className="busGreen">지선</div>
-                <div>1226</div>
+              <div className="">
+                <div className="flex items-center">
+                  <div className="busBlue">간선</div>
+                  <div>201</div>
+                </div>
+                <div className="flex items-center">
+                  <div className="busGreen">지선</div>
+                  <div>1226</div>
+                </div>
               </div>
             </div>
           </div>
-        </div>
 
-        <div>
-          <div className="flex justify-between my-3">
-            <div className="flex">
-              <a
-                className="text-blue-600"
-                href="https://map.kakao.com/?busStopId=11060701005"
-              >
-                한국과학기술원.홍릉초등학교
-              </a>
-              <div>(06274) | 220m </div>
-            </div>
-            <div>
-              <div className="flex items-center">
-                <div className="busBlue">간선</div>
-                <div>201, 273 </div>
+          <div>
+            <div className="flex justify-between my-3">
+              <div className="flex">
+                <a
+                  className="text-blue-600"
+                  href="https://map.kakao.com/?busStopId=11060701008"
+                >
+                  세종대왕기념관
+                </a>
+                <div>(06278) | 148m</div>
+              </div>
+              <div className="">
+                <div className="flex items-center">
+                  <div className="busBlue">간선</div>
+                  <div>201</div>
+                </div>
+                <div className="flex items-center">
+                  <div className="busGreen">지선</div>
+                  <div>1226</div>
+                </div>
               </div>
             </div>
           </div>
-        </div>
 
-        <div>
-          <div className="flex justify-between my-3">
-            <div className="flex">
-              <a
-                className="text-blue-600"
-                href="https://map.kakao.com/?busStopId=11060701004"
-              >
-                국방연구원
-              </a>
-              <div>(06276) | 238m</div>
-            </div>
-            <div className="mr-8">
-              <div className="flex items-center">
-                <div className="busBlue">간선</div>
-                <div>273</div>
+          <div>
+            <div className="flex justify-between my-3">
+              <div className="flex">
+                <a
+                  className="text-blue-600"
+                  href="https://map.kakao.com/?busStopId=11060701005"
+                >
+                  한국과학기술원.홍릉초등학교
+                </a>
+                <div>(06274) | 220m </div>
               </div>
-              <div className="flex items-center">
-                <div className="busGreen">지선</div>
-                <div>1226</div>
+              <div className="relative left-[27px]">
+                <div className="flex items-center ">
+                  <div className="busBlue">간선</div>
+                  <div>201, 273 </div>
+                </div>
               </div>
             </div>
           </div>
-        </div>
 
-        <div>지하철역</div>
-
-        <div className="flex items-center">
-          <a
-            href="https://map.kakao.com/?subwayId=SES2641"
-            className="text-blue-600 mr-2"
-          >
-            고려대역
-          </a>
-          <div className="text-white bg-yellow-900 rounded-full text-sm w-5  h-5 text-center mr-2">
-            6
+          <div>
+            <div className="flex justify-between my-3">
+              <div className="flex">
+                <a
+                  className="text-blue-600"
+                  href="https://map.kakao.com/?busStopId=11060701004"
+                >
+                  국방연구원
+                </a>
+                <div>(06276) | 238m</div>
+              </div>
+              <div className="">
+                <div className="flex items-center">
+                  <div className="busBlue">간선</div>
+                  <div>273</div>
+                </div>
+                <div className="flex items-center">
+                  <div className="busGreen">지선</div>
+                  <div>1226</div>
+                </div>
+              </div>
+            </div>
           </div>
-          <div className="mr-2">3번 출구</div>
-          <div className="text-red-500 mr-2">도보 13분</div>
+
+          <div className="font-semibold mb-2"> 지하철역</div>
+
+          <div className="flex items-center">
+            <a
+              href="https://map.kakao.com/?subwayId=SES2641"
+              className="text-blue-600 mr-2"
+            >
+              고려대역
+            </a>
+            <div className="text-white bg-yellow-900 rounded-full text-sm w-5  h-5 text-center mr-2">
+              6
+            </div>
+            <div className="mr-2">3번 출구</div>
+            <div className="text-red-500 mr-2">도보 13분</div>
+          </div>
         </div>
       </div>
     </div>

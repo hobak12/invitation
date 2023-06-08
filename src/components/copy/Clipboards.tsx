@@ -14,13 +14,11 @@ const Clipboards = () => {
 
   return (
     <div className="w-full">
-      <div className="w-fit mx-auto text-2xl font-bold my-3">
-        연락처 & 마음 전하실 곳
-      </div>
-      <div className="flex flex-wrap">
+      <div className="title ">연락처 & 마음 전하실 곳</div>
+      <div className="flex flex-wrap my-[10%]">
         {accountData.map((item, index) => {
           return (
-            <div className=" w-[48%] m-[1%] text-center" key={index}>
+            <div className=" w-[40%] m-[5%] text-center" key={index}>
               <div className="text-xl font-bold mb-2">{item.person}</div>
               <div className="my-2">{item.name}</div>
               <a href={`tel:${item.phone}`}>

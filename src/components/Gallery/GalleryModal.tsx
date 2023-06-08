@@ -17,7 +17,6 @@ const GalleryModal = ({
     setCurrent(current === 0 ? length - 1 : current - 1);
   };
 
-  console.log(Array.isArray(sliderData));
   if (!Array.isArray(sliderData) || sliderData.length <= 0) {
     return null;
   }

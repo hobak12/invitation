@@ -1,5 +1,6 @@
 import Comment from "./Comment";
 import CommentInput from "./CommentInput";
-import Modal from "./Modal";
+import CommentEditModal from "./CommentEditModal";
+import CommentDeleteModal from "./CommentDeleteModal";
 
-export { Comment, CommentInput, Modal };
+export { Comment, CommentInput, CommentEditModal, CommentDeleteModal };
