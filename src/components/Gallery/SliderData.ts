@@ -1,4 +1,4 @@
-const SliderData = [
+const sliderData = [
   { image: "/assets/gallery/01.jpg" },
   { image: "/assets/gallery/02.jpg" },
   { image: "/assets/gallery/03.jpg" },
@@ -20,4 +20,4 @@ const SliderData = [
   { image: "/assets/gallery/19.jpg" },
 ];
 
-export default SliderData;
+export default sliderData;

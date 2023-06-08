@@ -1,5 +1,5 @@
 const CopyModal = ({
-  AccountData,
+  accountData,
   current,
   onClickToggleModal,
   openModal,
@@ -14,7 +14,7 @@ const CopyModal = ({
   };
   return (
     <div>
-      {AccountData.map((item: any, index: number) => {
+      {accountData.map((item: any, index: number) => {
         return (
           <div
             className={`${

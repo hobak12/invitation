@@ -1,13 +1,13 @@
 import { MdArrowBackIosNew, MdArrowForwardIos, MdClose } from "react-icons/md";
 
 const GalleryModal = ({
-  SliderData,
+  sliderData,
   onClickToggleGalleryModal,
   openModal,
   current,
   setCurrent,
 }: any) => {
-  const length = SliderData.length;
+  const length = sliderData.length;
 
   const nextSlide = () => {
     setCurrent(current === length - 1 ? 0 : current + 1);
@@ -17,8 +17,8 @@ const GalleryModal = ({
     setCurrent(current === 0 ? length - 1 : current - 1);
   };
 
-  console.log(Array.isArray(SliderData));
-  if (!Array.isArray(SliderData) || SliderData.length <= 0) {
+  console.log(Array.isArray(sliderData));
+  if (!Array.isArray(sliderData) || sliderData.length <= 0) {
     return null;
   }
 
@@ -28,7 +28,7 @@ const GalleryModal = ({
         openModal ? "" : "hidden"
       } bg-pink-200 rounded-2xl w-[500px] h-fit fixed top-0 left-0 right-0 bottom-0 m-auto `}
     >
-      {SliderData.map((slide, index) => {
+      {sliderData.map((slide, index) => {
         return (
           <div key={index}>
             {index === current && (

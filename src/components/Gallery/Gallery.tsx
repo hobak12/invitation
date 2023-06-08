@@ -1,6 +1,6 @@
 import { useState, useRef } from "react";
 import GalleryModal from "./GalleryModal";
-import SliderData from "./SliderData";
+import sliderData from "./sliderData";
 
 import { BsChevronDown, BsChevronUp } from "react-icons/bs";
 const Gallery = () => {
@@ -30,10 +30,10 @@ const Gallery = () => {
   };
 
   return (
-    <div>
-      <div className={`${open ? "" : "h-[500px]"}  overflow-hidden`}>
+    <div className="mb-[20%]">
+      <div className={`${open ? "" : "h-[500px]"}  overflow-hidden `}>
         <div ref={element} className="flex flex-wrap">
-          {SliderData.map((slide, index) => {
+          {sliderData.map((slide, index) => {
             return (
               <div
                 className="w-[50%]"
@@ -50,7 +50,7 @@ const Gallery = () => {
           })}
         </div>
       </div>
-      <div className=" w-[20px] mx-auto m-5 ">
+      <div className=" w-[20px] mx-auto mt-5 ">
         <button
           onClick={onClickToggleGallery}
           className={`${open ? "hidden" : ""}`}
@@ -62,7 +62,7 @@ const Gallery = () => {
         </button>
       </div>
       <GalleryModal
-        SliderData={SliderData}
+        sliderData={sliderData}
         onClickToggleGalleryModal={onClickToggleGalleryModal}
         openModal={openModal}
         current={current}

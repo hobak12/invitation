@@ -1,5 +1,5 @@
 import Clipboards from "./Clipboards";
 import CopyModal from "./CopyModal";
-import AccountData from "./AccountData";
+import accountData from "./accountData";
 
-export { Clipboards, CopyModal, AccountData };
+export { Clipboards, CopyModal, accountData };

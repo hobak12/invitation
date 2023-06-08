@@ -1,4 +1,4 @@
-const AccountData = [
+const accountData = [
   {
     bank: "경남은행",
     number: "549221019316",
@@ -29,4 +29,4 @@ const AccountData = [
   },
 ];
 
-export default AccountData;
+export default accountData;

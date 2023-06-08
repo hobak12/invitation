@@ -1,14 +1,14 @@
 import { useEffect } from "react";
 
 declare global {
-  export interface Window {
+  interface Window {
     kakao: any;
+    Kakao: any;
   }
 }
-
 const { kakao } = window;
 
-const Map = () => {
+const Map = ({ t }: any) => {
   useEffect(() => {
     const container = document.getElementById("map");
     const options = {
@@ -46,8 +46,8 @@ const Map = () => {
   }, []);
 
   return (
-    <div>
-      <div className="text-center ">오시는 길</div>
+    <div className="mb-[20%] ">
+      <div className="text-center ">{t("map")}</div>
       <div className="border-2 text-center">
         <div>세종대왕 기념관 웨딩홀 (야외)</div>
         <div>서울 동대문구 회기로 56</div>
@@ -85,6 +85,117 @@ const Map = () => {
           />
           <div>네이버 지도 길찾기</div>
         </button>
+      </div>
+      <div className="bg-purple-100 mx-[10%]">
+        <div> 버스정류장</div>
+
+        <div>
+          <div className="flex justify-between">
+            <div className="flex">
+              <a
+                className="text-blue-600"
+                href="https://map.kakao.com/?busStopId=11060701007"
+              >
+                세종대왕기념관
+              </a>
+              <div>(06279) | 97m </div>
+            </div>
+            <div className="mr-8">
+              <div className="flex items-center">
+                <div className="busBlue">간선</div>
+                <div>201</div>
+              </div>
+              <div className="flex items-center">
+                <div className="busGreen">지선</div>
+                <div>1226</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div>
+          <div className="flex justify-between my-3">
+            <div className="flex">
+              <a
+                className="text-blue-600"
+                href="https://map.kakao.com/?busStopId=11060701008"
+              >
+                세종대왕기념관
+              </a>
+              <div>(06278) | 148m</div>
+            </div>
+            <div className="mr-8">
+              <div className="flex items-center">
+                <div className="busBlue">간선</div>
+                <div>201</div>
+              </div>
+              <div className="flex items-center">
+                <div className="busGreen">지선</div>
+                <div>1226</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div>
+          <div className="flex justify-between my-3">
+            <div className="flex">
+              <a
+                className="text-blue-600"
+                href="https://map.kakao.com/?busStopId=11060701005"
+              >
+                한국과학기술원.홍릉초등학교
+              </a>
+              <div>(06274) | 220m </div>
+            </div>
+            <div>
+              <div className="flex items-center">
+                <div className="busBlue">간선</div>
+                <div>201, 273 </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div>
+          <div className="flex justify-between my-3">
+            <div className="flex">
+              <a
+                className="text-blue-600"
+                href="https://map.kakao.com/?busStopId=11060701004"
+              >
+                국방연구원
+              </a>
+              <div>(06276) | 238m</div>
+            </div>
+            <div className="mr-8">
+              <div className="flex items-center">
+                <div className="busBlue">간선</div>
+                <div>273</div>
+              </div>
+              <div className="flex items-center">
+                <div className="busGreen">지선</div>
+                <div>1226</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div>지하철역</div>
+
+        <div className="flex items-center">
+          <a
+            href="https://map.kakao.com/?subwayId=SES2641"
+            className="text-blue-600 mr-2"
+          >
+            고려대역
+          </a>
+          <div className="text-white bg-yellow-900 rounded-full text-sm w-5  h-5 text-center mr-2">
+            6
+          </div>
+          <div className="mr-2">3번 출구</div>
+          <div className="text-red-500 mr-2">도보 13분</div>
+        </div>
       </div>
     </div>
   );

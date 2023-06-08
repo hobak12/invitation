@@ -94,7 +94,7 @@ const Comment = () => {
     return <>loading...</>;
   }
   return (
-    <>
+    <div className="mb-[20%]">
       <CommentInput />
       <div className="bg-purple-100 ">
         {data?.map((item) => {
@@ -191,7 +191,7 @@ const Comment = () => {
           );
         })}
       </div>
-    </>
+    </div>
   );
 };
 
