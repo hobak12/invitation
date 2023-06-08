@@ -96,94 +96,52 @@ const Comment = () => {
   return (
     <div className="mb-[20%]">
       <CommentInput />
-      <div className="bg-orang-200 p-2  ">
+      <div className="h-[400px] overflow-y-scroll overflow-x-hidden">
         {data?.map((item) => {
           return (
-            <div key={item.id} className="border-2 bg-white rounded-lg ">
-              <div className="bg-blue-200 ">
-                {item.id !== test ? (
-                  <>
-                    <div className="">{item.context}</div>
-                    <div>-{item.name}-</div>
-                    <div className=" text-xs text-gray-500 ">
-                      {new Date(
-                        item.createdAt.seconds * 1000 +
-                          item.createdAt.nanoseconds / 1000000
-                      ).toLocaleString()}
-                    </div>
-                    <button
-                      id={item.id}
-                      className={` button`}
-                      onClick={(e) => {
-                        openEdit(e);
-                      }}
-                    >
-                      수정
-                    </button>
-                  </>
-                ) : (
+            <div
+              key={item.id}
+              className="rounded-lg m-2 p-1 bg-[#ffeef1] sm:text-sm text-base "
+            >
+              <div className=" flex justify-evenly">
+                <div className="sm:w-[20%] w-[14%] p-1 h-fit my-auto">
+                  {item.name}
+                </div>
+                <div className="sm:w-[50%] w-[64%] p-1 h-fit my-auto">
+                  {item.context}
+                </div>
+
+                <div className=" text-xs sm:text-[5px] text-[#999] text-center p-1 h-fit my-auto">
                   <div>
-                    <input
-                      placeholder="비밀번호를 입력해주세요"
-                      ref={passwordRef}
-                      onChange={(e) => onChangePasswordHandler(e)}
-                    />
-
-                    <textarea
-                      placeholder="수정할 내용을 입력해주세요"
-                      ref={contextRef}
-                      onChange={(e) => onChangeContextHandler(e)}
-                    />
-
-                    <input
-                      placeholder="수정할 성명을 입력해주세요"
-                      ref={nameRef}
-                      onChange={(e) => onChangeNameHandler(e)}
-                    />
-
-                    <button
-                      className="button"
-                      onClick={(e) =>
-                        onClickUpdateCommentHandler(e, updateComment, item.id)
-                      }
-                    >
-                      확인
-                    </button>
-                    <button
-                      id={item.id}
-                      className="button"
-                      onClick={(e) => closeEdit(e)}
-                    >
-                      취소
-                    </button>
+                    {new Date(
+                      item.createdAt.seconds * 1000 +
+                        item.createdAt.nanoseconds / 1000000
+                    )
+                      .toLocaleString()
+                      .slice(0, 10)}
                   </div>
-                )}
+                  <div>
+                    {new Date(
+                      item.createdAt.seconds * 1000 +
+                        item.createdAt.nanoseconds / 1000000
+                    )
+                      .toLocaleString()
+                      .slice(11, 19)}
+                  </div>
+                </div>
 
-                <button
-                  className={`${showEdit ? "" : "hidden"} ${
-                    showDelete ? "" : "hidden"
-                  } button`}
-                  onClick={toggleDelete}
-                >
-                  삭제
-                </button>
-
-                <div className={`${showDelete ? "hidden" : ""} `}>
-                  <label>비밀번호</label>
-                  <input
-                    ref={passwordRef}
-                    onChange={(e) => onChangePasswordHandler(e)}
-                  />
+                <div className=" flex flex-col h-fit my-auto">
                   <button
-                    className="button"
-                    onClick={(e) =>
-                      onClickDeleteCommentHandler(e, deleteComment, item.id)
-                    }
+                    id={item.id}
+                    className="commentButton"
+                    onClick={(e) => {
+                      openEdit(e);
+                    }}
                   >
-                    확인
+                    수정
                   </button>
-                  <button className="button" onClick={toggleDelete}>
-                    취소
+                  <button className="commentButton" onClick={toggleDelete}>
+                    삭제
                   </button>
                 </div>
               </div>
