@@ -9,7 +9,7 @@ const accountData = [
   {
     bank: "하나은행",
     number: "88091066899707",
-    name: "PANDEY SUDHANSHU",
+    name: "판데이 수단슈",
     phone: "01024154657",
     person: "신랑",
   },

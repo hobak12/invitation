@@ -60,7 +60,7 @@ const CommentInput = () => {
 
   return (
     <form
-      className="flex sm:block border-pink-200 rounded-md mx-2 my-5 p-1 border-2 sm:text-sm text-base"
+      className="flex sm:block border-pink-200 rounded-lg mx-2 my-5 p-1 border-2 sm:text-sm text-base"
       onSubmit={(e) => onSubmitAddCommentHandler(e, addComment, newComment)}
     >
       <div className="block sm:flex p-1  sm:w-full w-[20%] ">

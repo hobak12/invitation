@@ -6,7 +6,7 @@ const Calendar = ({ t }: any) => {
   const h = Math.ceil(dis / (min1 * 60 * 24));
   return (
     <div className="mb-[20%]">
-      <div className="title1 mb-[20%] ">
+      <div className="dDay mb-[20%] ">
         {h === 0 ? (
           <div className="">오늘은 수단슈와 선형의 결혼식입니다!</div>
         ) : h > 0 ? (
@@ -19,7 +19,7 @@ const Calendar = ({ t }: any) => {
         )}
       </div>
       <img
-        className="w-[70%] mx-auto"
+        className="sm:w-[90%] w-[70%] mx-auto"
         alt="calendar"
         src="/assets/calendar.png"
       />
@@ -30,7 +30,7 @@ const Calendar = ({ t }: any) => {
 export default Calendar;
 
 // (
-//         <div className="title1 mb-[5%]">
+//         <div className="dDay mb-[5%]">
 //           {h > 0
 //             ? `수단슈와 선형의 결혼식이 ${h}일 남았습니다`
 //             : "2023년 9월 24일, 둘이 하나가 되었습니다"}

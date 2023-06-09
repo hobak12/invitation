@@ -12,7 +12,7 @@ const Language = () => {
   );
 
   return (
-    <div className="border-2">
+    <div className="border-2 border-pink-200">
       <button
         className={`${
           i18n.language !== "en-US" ? "bg-[#ffb6c1]" : ""

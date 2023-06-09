@@ -53,7 +53,7 @@ const CommentDeleteModal = ({
     <div
       className={`${
         openDeleteModal ? "" : "hidden"
-      }  bg-white shadow-lg rounded-xl  h-fit fixed top-0 left-0 right-0 bottom-0 m-auto w-[300px] p-10`}
+      }  bg-white shadow-lg rounded-lg  h-fit fixed top-0 left-0 right-0 bottom-0 m-auto w-[300px] p-10 z-50`}
     >
       <button
         onClick={onClickCloseDeleteModal}

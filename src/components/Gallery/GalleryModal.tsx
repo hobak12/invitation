@@ -25,7 +25,7 @@ const GalleryModal = ({
     <div
       className={`${
         openModal ? "" : "hidden"
-      } bg-pink-200 rounded-2xl w-[500px] h-fit fixed top-0 left-0 right-0 bottom-0 m-auto `}
+      } bg-pink-200 rounded-lg w-[500px] h-fit fixed top-0 left-0 right-0 bottom-0 m-auto z-50`}
     >
       {sliderData.map((slide, index) => {
         return (
@@ -40,7 +40,7 @@ const GalleryModal = ({
           </div>
         );
       })}
-      <div className="bg-slate-200 p-2 mt-2 rounded-b-2xl">
+      <div className="bg-slate-200 p-2 mt-2 rounded-b-lg">
         <div className="flex w-fit mx-auto bg">
           <MdArrowBackIosNew className="mx-4 text-2xl" onClick={prevSlide} />
           <MdArrowForwardIos className="mx-4 text-2xl" onClick={nextSlide} />

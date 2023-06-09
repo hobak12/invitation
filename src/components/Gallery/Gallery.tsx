@@ -30,18 +30,18 @@ const Gallery = () => {
   };
 
   return (
-    <div className="mb-[20%]">
+    <div className="mb-[20%] sm:ml-1 ml-3 ">
       <div className={`${open ? "" : "h-[500px]"}  overflow-hidden `}>
-        <div ref={element} className="flex flex-wrap">
+        <div ref={element} className="flex flex-wrap sm:gap-2 gap-3">
           {sliderData.map((slide, index) => {
             return (
               <div
-                className="w-[50%]"
+                className="w-[48%] "
                 key={index}
                 onClick={() => onClickToggleGalleryModal(index)}
               >
                 <img
-                  className="h-[350px] w-[340px] rounded-md m-1 object-cover"
+                  className="sm:h-[150px] sm:w-[180px] h-[300px] w-[340px] rounded-md  object-cover "
                   src={slide.image}
                   alt="갤러리 이미지"
                 />

@@ -19,7 +19,9 @@ const Clipboards = () => {
         {accountData.map((item, index) => {
           return (
             <div className=" w-[40%] m-[5%] text-center" key={index}>
-              <div className="text-xl font-bold mb-2">{item.person}</div>
+              <div className="text-xl sm:text-lg font-bold mb-2">
+                {item.person}
+              </div>
               <div className="my-2">{item.name}</div>
               <a href={`tel:${item.phone}`}>
                 <ImPhone className="w-[50px] bg-yel mx-auto my-2" />

@@ -66,13 +66,13 @@ const Comment = () => {
                 <div className=" flex flex-col h-fit my-auto">
                   <button
                     id={item.id}
-                    className="commentButton"
+                    className="button"
                     onClick={() => onClickOpenEditModal(item.id)}
                   >
                     수정
                   </button>
                   <button
-                    className="commentButton"
+                    className="button"
                     onClick={() => onClickOpenDeleteModal(item.id)}
                   >
                     삭제

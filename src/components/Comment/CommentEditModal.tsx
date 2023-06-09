@@ -86,7 +86,7 @@ const CommentEditModal = ({ data, setOpenEditModal, openEditModal }: any) => {
     <div
       className={`${
         openEditModal ? "" : "hidden"
-      } w-[300px]  z-[50] top-[40%] left-[35%] fixed bg-white p-4 rounded-lg flex flex-col items-center pb-7`}
+      } w-[300px]  z-50 top-[40%] left-[35%] fixed bg-white p-4 rounded-lg flex flex-col items-center pb-7 `}
     >
       <div className=" ">
         <button

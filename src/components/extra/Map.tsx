@@ -1,4 +1,6 @@
 import { useEffect } from "react";
+import { FaBus, FaSubway, FaInfo, FaMapMarkerAlt } from "react-icons/fa";
+import { ImPhone } from "react-icons/im";
 
 declare global {
   interface Window {
@@ -48,12 +50,13 @@ const Map = ({ t }: any) => {
   return (
     <div className="mb-[20%] ">
       <div className=" title  ">{t("map")}</div>
-      {/* <div className="border-2 text-center w-[98%] mx-auto p-2 my-[2%]  rounded-md">
-        <div>세종대왕 기념관 웨딩홀</div>
-        <div>서울 동대문구 회기로 56</div>
-        <div>Tel:02-960-1700</div>
-      </div> */}
-      <div id="map" className="w-full h-[400px]"></div>
+
+      <div className=" border-2 border-pink-200 text-center bg-white rounded-lg w-fit p-4 my-4 mx-auto">
+        <div className="mb-2">{t("time")}</div>
+        <div>{t("place")}</div>
+      </div>
+
+      <div id="map" className="w-full h-[400px] sm:h-[300px]"></div>
       <div className="flex justify-center gap-10  mt-[2%] mb-[5%]">
         <button
           className="mapButton flex"
@@ -64,7 +67,7 @@ const Map = ({ t }: any) => {
           }}
         >
           <img
-            className="w-[30px] h-[30px] "
+            className="sm:w-[25px] sm:h-[25px]  w-[30px] h-[30px] "
             alt="naver"
             src="https://self.cryucompany.com/kakao-navi.png"
           />
@@ -79,35 +82,43 @@ const Map = ({ t }: any) => {
           }}
         >
           <img
-            className="w-[30px] h-[30px] "
+            className="sm:w-[25px] sm:h-[25px] w-[30px] h-[30px] "
             alt="naver"
             src="https://self.cryucompany.com/naver-map.png"
           />
           <div>네이버 지도</div>
         </button>
       </div>
-      <div className="w-[80%] mx-auto text-base leading-loose">
-        <div className="border-b-2  mb-[5%]">
-          <div>세종대왕 기념관 웨딩홀</div>
-          <div>서울 동대문구 회기로 56</div>
-          <div>Tel:02-960-1700</div>
-          <div className="font-semibold mb-2">
-            주차 공간<span className="font-medium"> p1: 150대 </span>
+      <div className="sm:ml-5 w-[85%]  mx-auto text-base sm:text-sm leading-loose">
+        <div className="border-b-2 ">
+          <div className="flex items-center gap-1 ">
+            <FaMapMarkerAlt />
+            <div>서울 동대문구 회기로 56</div>
+          </div>
+          <div className="flex items-center gap-1 ">
+            <ImPhone />
+            <div>02-960-1700</div>
+          </div>
+          <div className="flex items-center gap-1 mb-3 ">
+            <FaInfo />
+            <div>세종대왕기념관 내부 어디든 주차(200대)</div>
           </div>
         </div>
         <div>
-          <div className="font-semibold mb-2"> 버스정류장</div>
+          <div className="flex items-center gap-1 font-semibold mt-3">
+            <FaBus /> <div>버스정류장</div>
+          </div>
 
           <div>
             <div className="flex justify-between">
-              <div className="flex">
+              <div className="flex items-center">
                 <a
                   className="text-blue-600"
                   href="https://map.kakao.com/?busStopId=11060701007"
                 >
                   세종대왕기념관
                 </a>
-                <div>(06279) | 97m </div>
+                <div className="sm:text-xs">(06279) | 97m </div>
               </div>
               <div className="">
                 <div className="flex items-center">
@@ -124,14 +135,14 @@ const Map = ({ t }: any) => {
 
           <div>
             <div className="flex justify-between my-3">
-              <div className="flex">
+              <div className="flex items-center">
                 <a
                   className="text-blue-600"
                   href="https://map.kakao.com/?busStopId=11060701008"
                 >
                   세종대왕기념관
                 </a>
-                <div>(06278) | 148m</div>
+                <div className="sm:text-xs">(06278) | 148m</div>
               </div>
               <div className="">
                 <div className="flex items-center">
@@ -148,16 +159,18 @@ const Map = ({ t }: any) => {
 
           <div>
             <div className="flex justify-between my-3">
-              <div className="flex">
+              <div className="flex items-center">
                 <a
                   className="text-blue-600"
                   href="https://map.kakao.com/?busStopId=11060701005"
                 >
-                  한국과학기술원.홍릉초등학교
+                  한국과학기술원,
+                  <br />
+                  홍릉초등학교
                 </a>
-                <div>(06274) | 220m </div>
+                <div className="sm:text-xs"> (06274) | 220m </div>
               </div>
-              <div className="relative left-[27px]">
+              <div className="relative left-[26px] sm:left-[24px] top-[9px]">
                 <div className="flex items-center ">
                   <div className="busBlue">간선</div>
                   <div>201, 273 </div>
@@ -168,14 +181,14 @@ const Map = ({ t }: any) => {
 
           <div>
             <div className="flex justify-between my-3">
-              <div className="flex">
+              <div className="flex items-center">
                 <a
                   className="text-blue-600"
                   href="https://map.kakao.com/?busStopId=11060701004"
                 >
                   국방연구원
                 </a>
-                <div>(06276) | 238m</div>
+                <div className="sm:text-xs">(06276) | 238m</div>
               </div>
               <div className="">
                 <div className="flex items-center">
@@ -190,7 +203,9 @@ const Map = ({ t }: any) => {
             </div>
           </div>
 
-          <div className="font-semibold mb-2"> 지하철역</div>
+          <div className="flex items-center gap-1 font-semibold mb-2">
+            <FaSubway /> <div>지하철역</div>
+          </div>
 
           <div className="flex items-center">
             <a
