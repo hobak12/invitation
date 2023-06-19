@@ -1,9 +1,9 @@
-import { Comment } from "../components/comment/index";
+import { Comment } from "../components/comment";
 import { Share } from "../components/share";
 import { Music, Calendar, Map } from "../components/extra";
 import { Clipboards } from "../components/copy";
 import { useTranslation } from "react-i18next";
-import { Gallery } from "../components/Gallery";
+import { Gallery } from "../components/gallery";
 
 const Main = () => {
   const { t } = useTranslation("main");
