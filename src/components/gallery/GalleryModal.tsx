@@ -39,7 +39,7 @@ const GalleryModal = ({
                 <img
                   src={slide.image}
                   alt="gallery modal"
-                  className=" object-cover sm:h-full h-[500px] p-1 mx-auto"
+                  className=" object-cover sm:h-[400px] h-[500px] p-1 mx-auto"
                 />
               )}
             </div>
