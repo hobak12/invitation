@@ -52,7 +52,7 @@ const Gallery = () => {
           })}
         </div>
       </div>
-      <div className=" w-[37px] mx-auto mt-5 ">
+      <div className=" w-[40px] mx-auto mt-5 ">
         <button
           onClick={onClickToggleGallery}
           className={`${open ? "hidden" : ""}`}
