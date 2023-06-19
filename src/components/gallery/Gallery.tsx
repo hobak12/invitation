@@ -30,9 +30,9 @@ const Gallery = () => {
   };
 
   return (
-    <div className="mb-[20%] sm:ml-1 ml-3 ">
+    <div className="mb-[20%]  ml-3 ">
       <div className={`${open ? "" : "h-[500px]"}  overflow-hidden `}>
-        <div ref={element} className="flex flex-wrap sm:gap-2 gap-3">
+        <div ref={element} className="flex flex-wrap sm:gap-1 gap-3">
           {sliderData.map((slide, index) => {
             return (
               <div
