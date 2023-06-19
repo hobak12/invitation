@@ -1,13 +1,205 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+@import url("https://fonts.googleapis.com/css2?family=Noto+Serif+KR&display=swap");
+
+/* bg-[#ffdadf] */
+
+.button {
+  background-color: lightpink;
+  border-radius: 5px;
+  padding: 2px 4px;
+  width: max-content;
+  margin: 2px;
+  font-size: 15px;
+  font-weight: 600;
+}
+.button:hover {
+  box-shadow: 0px 2px 2px rgb(0 0 0 / 0.1);
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.button_edit {
+  background-color: lightpink;
+  border-radius: 5px;
+  padding: 5px;
+  width: 100%;
+  font-weight: 600;
+}
+.button_edit:hover {
+  box-shadow: 0px 2px 2px rgb(0 0 0 / 0.1);
+}
+
+.button_delete {
+  background-color: lightpink;
+  border-radius: 5px;
+  padding: 2px 4px;
+  width: max-content;
+  font-size: 15px;
+  font-weight: 600;
+}
+.button_delete:hover {
+  box-shadow: 0px 2px 2px rgb(0 0 0 / 0.1);
+}
+
+.button_account {
+  background-color: lightpink;
+  border-radius: 5px;
+  width: 100%;
+  font-size: 15px;
+  font-weight: 600;
+  margin: 0px 2px;
+}
+.button_account:hover {
+  box-shadow: 0px 2px 2px rgb(0 0 0 / 0.1);
+}
+
+.map_button {
+  background-color: #ffb6c1;
+  border-radius: 5px;
+  padding: 2px 6px 2px 2px;
+  width: max-content;
+  margin-right: 5px;
+}
+.map_button:hover {
+  box-shadow: 0px 2px 2px rgb(0 0 0 / 0.1);
+}
+
+.bus_blue {
+  background-color: rgb(105, 42, 214);
+  color: white;
+  border-radius: 2px;
+  width: max-content;
+  margin-right: 5px;
+  line-height: 20px;
+  padding: 2px;
+  margin-bottom: 1px;
+  font-size: 15px;
+}
+
+.bus_green {
+  background-color: rgb(29, 148, 11);
+  color: white;
+  border-radius: 2px;
+  width: max-content;
+  margin-right: 5px;
+  line-height: 20px;
+  padding: 2px;
+  margin-bottom: 1px;
+  font-size: 15px;
+}
+
+.title {
+  background-color: #ffeef1;
+  font-size: 20px;
+  width: 100%;
+  padding: 10px;
+  text-align: center;
+  font-weight: 700;
+}
+
+.d_day {
+  background-color: #ffeef1;
+  font-size: 18px;
+  width: 100%;
+  padding: 10px;
+  text-align: center;
+}
+
+.input {
+  width: 100%;
+  margin: 1px;
+  padding: 5px;
+  border: 1px solid lightpink;
+  border-radius: 5px;
+}
+
+.input_edit {
+  width: 100%;
+  margin: 1px;
+  padding: 5px;
+  border: 1px solid lightpink;
+  border-radius: 5px;
+  padding: 4px;
+  font-size: 16px;
+}
+
+.input_PW {
+  border: 1px solid lightpink;
+  border-radius: 5px;
+  width: 150px;
+  padding: 2px 4px;
+  font-size: 16px;
+}
+
+.textarea {
+  width: 100%;
+  height: 75px;
+  padding: 5px;
+  border: 1px solid #ffb6c1;
+  border-radius: 5px;
+}
+
+.textarea_edit {
+  width: 100%;
+  height: 150px;
+  padding: 5px;
+  border: 1px solid #ffb6c1;
+  border-radius: 5px;
+}
+
+audio::-webkit-media-controls-panel {
+  background-color: rgb(255, 252, 245);
+}
+
+@media only screen and (max-width: 600px) {
+  .bus_blue {
+    background-color: rgb(105, 42, 214);
+    color: white;
+    border-radius: 2px;
+    width: max-content;
+    margin-right: 5px;
+    line-height: 20px;
+    padding: 0px 2px;
+    margin-bottom: 1px;
+    font-size: 12px;
+  }
+
+  .bus_green {
+    background-color: rgb(29, 148, 11);
+    color: white;
+    border-radius: 2px;
+    width: max-content;
+    margin-right: 5px;
+    line-height: 20px;
+    padding: 0px 2px;
+    margin-bottom: 1px;
+    font-size: 12px;
+  }
+
+  .button {
+    background-color: lightpink;
+    border-radius: 5px;
+    padding: 3px 4px;
+    width: max-content;
+    font-size: 13px;
+    font-weight: 600;
+    margin: 1px;
+  }
+
+  .title {
+    background-color: #ffeef1;
+    font-size: 18px;
+    width: 100%;
+    padding: 10px;
+    text-align: center;
+    font-weight: 700;
+  }
+
+  .d_day {
+    background-color: #ffeef1;
+    font-size: 16px;
+    width: 100%;
+    padding: 10px;
+    text-align: center;
+  }
 }
