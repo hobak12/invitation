@@ -30,7 +30,7 @@ const GalleryModal = ({
       <div
         className={`${
           openModal ? "" : "hidden"
-        } bg-white rounded-lg sm:w-full w-[500px] h-fit fixed top-0 left-0 right-0 bottom-0 m-auto z-50`}
+        } bg-white rounded-lg w-[500px] h-fit fixed top-0 left-0 right-0 bottom-0 m-auto z-50`}
       >
         {sliderData.map((slide, index) => {
           return (
@@ -39,7 +39,7 @@ const GalleryModal = ({
                 <img
                   src={slide.image}
                   alt="gallery modal"
-                  className=" object-cover sm:h-full h-[500px] p-1 mx-auto"
+                  className=" object-cover sm:h-[400px] h-[500px] p-1 mx-auto"
                 />
               )}
             </div>
