@@ -61,33 +61,35 @@ const ShareModal = ({ openModal, onClickToggleModal }: any) => {
     <div
       className={`${
         openModal ? "" : "hidden"
-      } bg-white rounded-lg fixed top-0 bottom-0 left-0 right-0 h-fit w-[300px] m-auto z-50 `}
+      } fixed bottom-0 top-0 left-0 right-0 bg-black bg-opacity-80 z-40 `}
     >
-      <div>
-        <div className="text-center border-b-2 py-4 ">공유하기</div>
-        <button onClick={onClickToggleModal}>
-          <RiCloseFill className="hover:bg-pink-200 rounded-full w-[22px] h-[22px]  absolute right-1 top-1 m-1" />
-        </button>
-      </div>
+      <div className="bg-white rounded-lg fixed top-0 bottom-0 left-0 right-0 h-fit w-[250px] m-auto z-50 ">
+        <div>
+          <div className="text-center border-b-2  py-4 ">공유하기</div>
+          <button onClick={onClickToggleModal}>
+            <RiCloseFill className="hover:bg-pink-200 rounded-full w-[22px] h-[22px]  absolute right-1 top-1 m-1" />
+          </button>
+        </div>
 
-      <div className=" flex gap-10 justify-center mb-8 text-base">
-        <button>
-          <div
-            onClick={() => copyClipboard(test1)}
-            className="bg-gray-200 rounded-full p-2 w-fit mx-auto"
-          >
-            <ImLink />
-          </div>
-          <div className="mt-1">링크 복사 </div>
-        </button>
-        <button onClick={() => shareKakao(test1, test2)}>
-          <img
-            className="w-[30px] h-[30px] mx-auto"
-            alt="kakaotalk share"
-            src="https://self.cryucompany.com/kakaoButtonImg.png"
-          />
-          <div className="mt-1">카카오톡 공유</div>
-        </button>
+        <div className=" flex gap-10 justify-center mb-8 text-base">
+          <button>
+            <div
+              onClick={() => copyClipboard(test1)}
+              className="bg-gray-200 rounded-full p-2 w-fit mx-auto"
+            >
+              <ImLink />
+            </div>
+            <div className="mt-1">링크 복사 </div>
+          </button>
+          <button onClick={() => shareKakao(test1, test2)}>
+            <img
+              className="w-[30px] h-[30px] mx-auto"
+              alt="kakaotalk share"
+              src="https://self.cryucompany.com/kakaoButtonImg.png"
+            />
+            <div className="mt-1">카카오톡 공유</div>
+          </button>
+        </div>
       </div>
     </div>
   );

@@ -9,15 +9,6 @@ const sliderData = [
   { image: "/assets/gallery/08.jpg" },
   { image: "/assets/gallery/09.jpg" },
   { image: "/assets/gallery/10.jpg" },
-  { image: "/assets/gallery/11.jpg" },
-  { image: "/assets/gallery/12.jpg" },
-  { image: "/assets/gallery/13.jpg" },
-  { image: "/assets/gallery/14.jpg" },
-  { image: "/assets/gallery/15.jpg" },
-  { image: "/assets/gallery/16.jpg" },
-  { image: "/assets/gallery/17.jpg" },
-  { image: "/assets/gallery/18.jpg" },
-  { image: "/assets/gallery/19.jpg" },
 ];
 
 export default sliderData;

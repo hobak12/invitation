@@ -13,32 +13,36 @@ const CopyModal = ({
     }
   };
   return (
-    <div>
+    <div
+      className={`${
+        openModal ? "" : "hidden"
+      } fixed bottom-0 top-0 left-0 right-0 bg-black bg-opacity-80 z-40 `}
+    >
       {accountData.map((item: any, index: number) => {
         return (
           <div
             key={index}
-            className={`${
-              openModal ? "" : "hidden"
-            } bg-white rounded-lg fixed top-0 bottom-0 left-0 right-0 h-fit w-[200px] m-auto  z-50 text-center leading-loose p-2`}
+            className="bg-white rounded-lg fixed top-0 bottom-0 left-0 right-0 h-fit w-[250px] m-auto  z-50 text-center leading-[35px] p-2"
           >
             {index === current && (
               <div key={index}>
-                <div>{item.bank}</div>
+                <div className="">{item.bank}</div>
                 <div>{item.number}</div>
                 <div>{item.name}</div>
-                <button
-                  className="button"
-                  onClick={() => copyClipboard(item.number)}
-                >
-                  복사
-                </button>
-                <button
-                  className="button"
-                  onClick={() => onClickToggleModal(index)}
-                >
-                  닫기
-                </button>
+                <div className=" flex ">
+                  <button
+                    className="button_account"
+                    onClick={() => copyClipboard(item.number)}
+                  >
+                    복사
+                  </button>
+                  <button
+                    className="button_account"
+                    onClick={() => onClickToggleModal(index)}
+                  >
+                    닫기
+                  </button>
+                </div>
               </div>
             )}
           </div>

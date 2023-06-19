@@ -80,7 +80,7 @@ const CommentInput = () => {
 
       <div className="p-1 w-full ">
         <textarea
-          className="textArea"
+          className="textarea"
           placeholder="방명록을 입력해주세요."
           ref={contextRef}
           onChange={(e) => onChangeContextHandler(e)}

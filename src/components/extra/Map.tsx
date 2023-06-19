@@ -57,9 +57,9 @@ const Map = ({ t }: any) => {
       </div>
 
       <div id="map" className="w-full h-[400px] sm:h-[300px]"></div>
-      <div className="flex justify-center gap-10  mt-[2%] mb-[5%]">
+      <div className="flex justify-center gap-10 my-[5%] ">
         <button
-          className="mapButton flex"
+          className="map_button flex"
           onClick={() => {
             window.open(
               "https://map.kakao.com/link/to/세종대왕기념관웨딩홀,37.59073497281094,127.04358664439376"
@@ -74,7 +74,7 @@ const Map = ({ t }: any) => {
           <div>카카오맵</div>
         </button>
         <button
-          className="mapButton flex"
+          className="map_button flex"
           onClick={() => {
             window.open(
               "https://map.naver.com/v5/?c=15,0,0,0,dh&lng=127.04358664439376&lat=37.59073497281094&type=0&title=세종대왕기념관웨딩홀"
@@ -91,15 +91,15 @@ const Map = ({ t }: any) => {
       </div>
       <div className="sm:ml-5 w-[85%]  mx-auto text-base sm:text-sm leading-loose">
         <div className="border-b-2 ">
-          <div className="flex items-center gap-1 ">
+          <div className="flex items-center gap-1 my-2">
             <FaMapMarkerAlt />
             <div>서울 동대문구 회기로 56</div>
           </div>
-          <div className="flex items-center gap-1 ">
+          <div className="flex items-center gap-1 my-2">
             <ImPhone />
             <div>02-960-1700</div>
           </div>
-          <div className="flex items-center gap-1 mb-3 ">
+          <div className="flex items-center gap-1 mb-3 my-2">
             <FaInfo />
             <div>세종대왕기념관 내부 어디든 주차(200대)</div>
           </div>
@@ -122,11 +122,11 @@ const Map = ({ t }: any) => {
               </div>
               <div className="">
                 <div className="flex items-center">
-                  <div className="busBlue">간선</div>
+                  <div className="bus_blue">간선</div>
                   <div>201</div>
                 </div>
                 <div className="flex items-center">
-                  <div className="busGreen">지선</div>
+                  <div className="bus_green">지선</div>
                   <div>1226</div>
                 </div>
               </div>
@@ -146,11 +146,11 @@ const Map = ({ t }: any) => {
               </div>
               <div className="">
                 <div className="flex items-center">
-                  <div className="busBlue">간선</div>
+                  <div className="bus_blue">간선</div>
                   <div>201</div>
                 </div>
                 <div className="flex items-center">
-                  <div className="busGreen">지선</div>
+                  <div className="bus_green">지선</div>
                   <div>1226</div>
                 </div>
               </div>
@@ -172,7 +172,7 @@ const Map = ({ t }: any) => {
               </div>
               <div className="relative left-[26px] sm:left-[24px] top-[9px]">
                 <div className="flex items-center ">
-                  <div className="busBlue">간선</div>
+                  <div className="bus_blue">간선</div>
                   <div>201, 273 </div>
                 </div>
               </div>
@@ -192,11 +192,11 @@ const Map = ({ t }: any) => {
               </div>
               <div className="">
                 <div className="flex items-center">
-                  <div className="busBlue">간선</div>
+                  <div className="bus_blue">간선</div>
                   <div>273</div>
                 </div>
                 <div className="flex items-center">
-                  <div className="busGreen">지선</div>
+                  <div className="bus_green">지선</div>
                   <div>1226</div>
                 </div>
               </div>

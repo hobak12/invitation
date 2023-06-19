@@ -18,39 +18,53 @@
   box-shadow: 0px 2px 2px rgb(0 0 0 / 0.1);
 }
 
-.buttonEdit {
+.button_edit {
   background-color: lightpink;
   border-radius: 5px;
-  padding: 2px;
+  padding: 5px;
   width: 100%;
+  font-weight: 600;
 }
-.buttonEdit:hover {
+.button_edit:hover {
   box-shadow: 0px 2px 2px rgb(0 0 0 / 0.1);
 }
 
-/* .commentButton {
+.button_delete {
   background-color: lightpink;
   border-radius: 5px;
-  padding: 2px;
+  padding: 2px 4px;
   width: max-content;
-  margin: 2px;
+  font-size: 15px;
+  font-weight: 600;
 }
-.commentButton:hover {
+.button_delete:hover {
   box-shadow: 0px 2px 2px rgb(0 0 0 / 0.1);
-} */
+}
 
-.mapButton {
+.button_account {
+  background-color: lightpink;
+  border-radius: 5px;
+  width: 100%;
+  font-size: 15px;
+  font-weight: 600;
+  margin: 0px 2px;
+}
+.button_account:hover {
+  box-shadow: 0px 2px 2px rgb(0 0 0 / 0.1);
+}
+
+.map_button {
   background-color: #ffb6c1;
   border-radius: 5px;
   padding: 2px 6px 2px 2px;
   width: max-content;
   margin-right: 5px;
 }
-.mapButton:hover {
+.map_button:hover {
   box-shadow: 0px 2px 2px rgb(0 0 0 / 0.1);
 }
 
-.busBlue {
+.bus_blue {
   background-color: rgb(105, 42, 214);
   color: white;
   border-radius: 2px;
@@ -62,7 +76,7 @@
   font-size: 15px;
 }
 
-.busGreen {
+.bus_green {
   background-color: rgb(29, 148, 11);
   color: white;
   border-radius: 2px;
@@ -83,7 +97,7 @@
   font-weight: 700;
 }
 
-.dDay {
+.d_day {
   background-color: #ffeef1;
   font-size: 18px;
   width: 100%;
@@ -99,14 +113,25 @@
   border-radius: 5px;
 }
 
-.inputPW {
+.input_edit {
+  width: 100%;
+  margin: 1px;
+  padding: 5px;
+  border: 1px solid lightpink;
+  border-radius: 5px;
+  padding: 4px;
+  font-size: 16px;
+}
+
+.input_PW {
   border: 1px solid lightpink;
   border-radius: 5px;
   width: 150px;
-  padding: 1px;
+  padding: 2px 4px;
+  font-size: 16px;
 }
 
-.textArea {
+.textarea {
   width: 100%;
   height: 75px;
   padding: 5px;
@@ -114,7 +139,7 @@
   border-radius: 5px;
 }
 
-.textAreaEdit {
+.textarea_edit {
   width: 100%;
   height: 150px;
   padding: 5px;
@@ -123,30 +148,30 @@
 }
 
 audio::-webkit-media-controls-panel {
-  background-color: #ffeef1;
+  background-color: rgb(255, 252, 245);
 }
 
 @media only screen and (max-width: 600px) {
-  .busBlue {
+  .bus_blue {
     background-color: rgb(105, 42, 214);
     color: white;
     border-radius: 2px;
     width: max-content;
     margin-right: 5px;
     line-height: 20px;
-    padding: 1px;
+    padding: 0px 2px;
     margin-bottom: 1px;
     font-size: 12px;
   }
 
-  .busGreen {
+  .bus_green {
     background-color: rgb(29, 148, 11);
     color: white;
     border-radius: 2px;
     width: max-content;
     margin-right: 5px;
     line-height: 20px;
-    padding: 1px;
+    padding: 0px 2px;
     margin-bottom: 1px;
     font-size: 12px;
   }
@@ -170,7 +195,7 @@ audio::-webkit-media-controls-panel {
     font-weight: 700;
   }
 
-  .dDay {
+  .d_day {
     background-color: #ffeef1;
     font-size: 16px;
     width: 100%;

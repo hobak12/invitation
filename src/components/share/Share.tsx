@@ -16,6 +16,7 @@ const Share = ({ t }: any) => {
         openModal={openModal}
         onClickToggleModal={onClickToggleModal}
       />
+
       <button onClick={onClickToggleModal}>
         <div className=" relative sm:left-[60px] left-[190px] ">
           <div className="border-[1px] border-black rounded-full p-1 w-fit mx-auto">

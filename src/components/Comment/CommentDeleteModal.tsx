@@ -53,27 +53,29 @@ const CommentDeleteModal = ({
     <div
       className={`${
         openDeleteModal ? "" : "hidden"
-      }  bg-white shadow-lg rounded-lg  h-fit fixed top-0 left-0 right-0 bottom-0 m-auto w-[300px] p-10 z-50`}
+      } fixed bottom-0 top-0 left-0 right-0 bg-black bg-opacity-80 z-40 `}
     >
-      <button
-        onClick={onClickCloseDeleteModal}
-        className=" absolute top-0 right-0"
-      >
-        <RiCloseFill className="hover:bg-pink-200 rounded-full w-[22px] h-[22px] m-2 " />
-      </button>
-      <div>
-        <input
-          className="inputPW mr-4"
-          placeholder="비밀번호"
-          ref={deletePasswordRef}
-          onChange={(e) => onChangePasswordHandler(e)}
-        />
+      <div className=" bg-white shadow-lg rounded-lg  h-fit fixed top-0 left-0 right-0 bottom-0 m-auto w-[300px] p-10 z-50">
         <button
-          className="button"
-          onClick={(e) => onClickDeleteCommentHandler(e, deleteComment)}
+          onClick={onClickCloseDeleteModal}
+          className=" absolute top-0 right-0"
         >
-          삭제
+          <RiCloseFill className="hover:bg-pink-200 rounded-full w-[22px] h-[22px] m-2 " />
         </button>
+        <div>
+          <input
+            className="input_PW  mr-4"
+            placeholder="비밀번호"
+            ref={deletePasswordRef}
+            onChange={(e) => onChangePasswordHandler(e)}
+          />
+          <button
+            className="button_delete"
+            onClick={(e) => onClickDeleteCommentHandler(e, deleteComment)}
+          >
+            삭제
+          </button>
+        </div>
       </div>
     </div>
   );

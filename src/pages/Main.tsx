@@ -1,6 +1,6 @@
 import { Comment } from "../components/comment/index";
 import { Share } from "../components/share";
-import { Music, Language, Calendar, Map } from "../components/extra";
+import { Music, Calendar, Map } from "../components/extra";
 import { Clipboards } from "../components/copy";
 import { useTranslation } from "react-i18next";
 import { Gallery } from "../components/Gallery";
@@ -11,8 +11,7 @@ const Main = () => {
   return (
     <div className="bg-orange-100 bg-opacity-10 font-basic sm:text-base text-lg mx-auto w-[600px] h-[100%] sm:w-full shadow-xl ')]">
       <div className="flex flex-col items-center">
-        <div className="flex items-center mt-2  w-full justify-between p-3">
-          <Language />
+        <div className="flex justify-center w-full bg-orange-100 bg-opacity-10">
           <Music />
         </div>
         <div className="my-[10%] text-center">
