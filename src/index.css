@@ -3,8 +3,6 @@
 @import "tailwindcss/utilities";
 @import url("https://fonts.googleapis.com/css2?family=Noto+Serif+KR&display=swap");
 
-/* bg-[#ffdadf] */
-
 .button {
   background-color: lightpink;
   border-radius: 5px;
@@ -159,7 +157,7 @@ audio::-webkit-media-controls-panel {
     width: max-content;
     margin-right: 5px;
     line-height: 20px;
-    padding: 0px 2px;
+    padding: 0px 4px;
     margin-bottom: 1px;
     font-size: 12px;
   }
@@ -171,7 +169,7 @@ audio::-webkit-media-controls-panel {
     width: max-content;
     margin-right: 5px;
     line-height: 20px;
-    padding: 0px 2px;
+    padding: 0px 4px;
     margin-bottom: 1px;
     font-size: 12px;
   }

@@ -43,7 +43,7 @@ const Gallery = () => {
                 onClick={() => onClickToggleGalleryModal(index)}
               >
                 <img
-                  className="sm:h-[170px] sm:w-[200px] h-[310px] w-[345px] rounded-md  object-cover "
+                  className="hover:cursor-pointer sm:h-[170px] sm:w-[200px] h-[310px] w-[345px] rounded-md  object-cover "
                   src={slide.image}
                   alt="갤러리 이미지"
                 />
@@ -52,7 +52,7 @@ const Gallery = () => {
           })}
         </div>
       </div>
-      <div className=" w-[40px] mx-auto mt-5 ">
+      <div className=" w-[47px] mx-auto mt-5 ">
         <button
           onClick={onClickToggleGallery}
           className={`${open ? "hidden" : ""}`}

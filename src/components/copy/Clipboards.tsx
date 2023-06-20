@@ -22,9 +22,9 @@ const Clipboards = () => {
               <div className="text-xl sm:text-[17px]  font-bold mb-2">
                 {item.person}
               </div>
-              <div className="my-2">{item.name}</div>
+              <div className="my-4">{item.name}</div>
               <a href={`tel:${item.phone}`}>
-                <ImPhone className="w-[50px]  mx-auto my-2" />
+                <ImPhone className="w-[50px]  mx-auto my-4" />
               </a>
               <button
                 className="button"

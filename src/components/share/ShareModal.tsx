@@ -34,7 +34,7 @@ const ShareModal = ({ openModal, onClickToggleModal }: any) => {
         },
         buttons: [
           {
-            title: "title",
+            title: "청첩장 보러가기",
             link: {
               mobileWebUrl: route,
               webUrl: route,
@@ -54,7 +54,7 @@ const ShareModal = ({ openModal, onClickToggleModal }: any) => {
     }
   };
 
-  const test1 = "http://localhost:3000";
+  const test1 = "https://invitation-git-main-hobak12.vercel.app/";
   const test2 = "김선형 ♥ 판데이 수단슈 결혼합니다";
 
   return (
