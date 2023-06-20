@@ -26,7 +26,8 @@ const ShareModal = ({ openModal, onClickToggleModal }: any) => {
         content: {
           title: title, // 인자값으로 받은 title
           description: "부부가 되는 날,  소중한 분들을 초대합니다.", // 인자값으로 받은 title
-          imageUrl: "/assets/marriage.png",
+          imageUrl:
+            "https://user-images.githubusercontent.com/117059420/247037430-be5abf8a-fb2d-4af8-bb72-8d504ea304bb.png",
           link: {
             mobileWebUrl: route, // 인자값으로 받은 route(uri 형태)
             webUrl: route,
