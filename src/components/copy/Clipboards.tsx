@@ -2,6 +2,7 @@ import { ImPhone } from "react-icons/im";
 import { CopyModal } from "./index";
 import { useState } from "react";
 import { accountData } from "./index";
+import { isMobile } from "react-device-detect";
 
 const Clipboards = () => {
   const [current, setCurrent] = useState<number>(0);
@@ -23,9 +24,16 @@ const Clipboards = () => {
                 {item.person}
               </div>
               <div className="my-4">{item.name}</div>
-              <a href={`tel:${item.phone}`}>
-                <ImPhone className="w-[50px]  mx-auto my-4" />
-              </a>
+              {isMobile ? (
+                <a href={`tel:${item.phone}`}>
+                  <ImPhone className="w-[50px]  mx-auto my-4" />
+                </a>
+              ) : (
+                <div onClick={() => alert("이 기능은 모바일에서만 지원합니다")}>
+                  <ImPhone className="w-[50px]  mx-auto my-4 hover:cursor-pointer" />
+                </div>
+              )}
+
               <button
                 className="button"
                 onClick={() => onClickToggleModal(index)}
