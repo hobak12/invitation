@@ -1,5 +1,5 @@
 import { CommentInput, CommentEditModal, CommentDeleteModal } from "./index";
-import { useState, useRef, useEffect } from "react";
+import { useState } from "react";
 import { useGetCommentQuery } from "../../redux/modules/apiSlice";
 import { useNavigate } from "react-router-dom";
 

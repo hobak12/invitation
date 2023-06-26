@@ -209,7 +209,7 @@ audio::-webkit-media-controls-panel {
   font-size: 120px;
   margin: 0;
   padding: 0;
-  animation: fall 30s linear infinite;
+  animation: fall 40s linear infinite;
 }
 
 .petals1 {
@@ -219,7 +219,7 @@ audio::-webkit-media-controls-panel {
   font-size: 120px;
   margin: 0;
   padding: 0;
-  animation: fall1 30s linear infinite;
+  animation: fall1 40s linear infinite;
 }
 
 @keyframes fall {

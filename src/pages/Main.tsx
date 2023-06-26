@@ -16,7 +16,7 @@ const Main = () => {
       "Snowflakes are awesome!!! They are like little pieces of magic!!! Love flak"
     );
     return arr.map((el, i) => {
-      animationDelay = `${(Math.random() * 30).toFixed(2)}s`;
+      animationDelay = `${(Math.random() * 40).toFixed(2)}s`;
       console.log(animationDelay);
       fontSize = `${Math.floor(Math.random() * 25) + 10}px`;
       let style = {

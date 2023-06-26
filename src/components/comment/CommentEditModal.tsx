@@ -109,6 +109,7 @@ const CommentEditModal = ({ data, setOpenEditModal, openEditModal }: any) => {
                 <input
                   className="input_edit "
                   placeholder="비밀번호"
+                  type="password"
                   ref={editPasswordRef}
                   onChange={(e) => onChangePasswordHandler(e)}
                 />

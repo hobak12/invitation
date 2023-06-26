@@ -73,6 +73,7 @@ const CommentInput = () => {
         <input
           className="input"
           placeholder="비밀번호"
+          type="password"
           ref={passwordRef}
           onChange={(e) => onChangePasswordHandler(e)}
         />
