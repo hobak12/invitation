@@ -253,7 +253,7 @@ audio::-webkit-media-controls-panel {
   }
 
   100% {
-    transform: translate(0, 300vh);
+    transform: translate(0, 600vh);
     opacity: 0;
   }
 }
