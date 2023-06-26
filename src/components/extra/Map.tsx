@@ -99,7 +99,7 @@ const Map = ({ t }: any) => {
         <div>{t("place")}</div>
       </div>
       <button onClick={setCenter}>
-        <GrPowerReset className="relative top-10 left-2 z-[55] w-[30px] h-[30px] rounded p-1 bg-white" />
+        <GrPowerReset className="relative top-10 left-1 z-[55] w-[30px] h-[30px] rounded p-1 bg-white" />
       </button>
       <div id="map" className="w-full h-[400px] sm:h-[300px]"></div>
       <div className="flex justify-center gap-10 my-[5%] ">
