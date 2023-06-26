@@ -55,7 +55,7 @@ const ShareModal = ({ openModal, onClickToggleModal }: any) => {
     }
   };
 
-  const test1 = "https://invitation-git-main-hobak12.vercel.app/";
+  const test1 = "https://www.chunseon.site/";
   const test2 = "김선형 ♥ 판데이 수단슈 결혼합니다";
 
   return (

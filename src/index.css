@@ -200,4 +200,57 @@ audio::-webkit-media-controls-panel {
     padding: 10px;
     text-align: center;
   }
+
+  .petals {
+    display: inline-block;
+    color: lightpink;
+    margin: 0;
+    padding: 0;
+    animation: fall 30s linear infinite;
+  }
+
+  @keyframes fall {
+    0% {
+      opacity: 0;
+    }
+    3% {
+      opacity: 0.9;
+    }
+
+    90% {
+      opacity: 0.9;
+    }
+    100% {
+      transform: translate(0, 400vh);
+      opacity: 0;
+    }
+  }
+}
+
+.petals {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  color: lightpink;
+  font-size: 120px;
+  margin: 0;
+  padding: 0;
+  animation: fall 30s linear infinite;
+}
+
+@keyframes fall {
+  0% {
+    opacity: 0;
+  }
+  3% {
+    opacity: 0.8;
+  }
+
+  90% {
+    opacity: 0.8;
+  }
+  100% {
+    transform: translate(0, 900vh);
+    opacity: 0;
+  }
 }

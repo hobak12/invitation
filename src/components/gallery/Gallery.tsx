@@ -43,7 +43,7 @@ const Gallery = () => {
                 onClick={() => onClickToggleGalleryModal(index)}
               >
                 <img
-                  className="hover:cursor-pointer sm:h-[170px] sm:w-[200px] h-[310px] w-[345px] rounded-md  object-cover "
+                  className="hover:cursor-pointer sm:h-[190px] sm:w-[200px] h-[310px] w-[345px] rounded-md  object-cover "
                   src={slide.image}
                   alt="갤러리 이미지"
                 />
