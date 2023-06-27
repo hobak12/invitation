@@ -37,14 +37,14 @@ const Main = () => {
         <div className="flex flex-col items-center">
           <div className="z-[100] flex justify-center w-full bg-orange-100 bg-opacity-10">
             <Music />
-          </div>{" "}
+          </div>
           <div className="my-[10%] text-center">
             <div className="flex items-baseline mb-[4%] ml-8 text-xl sm:text-lg">
-              {t("brideName")}
+              김선형
               <span className="text-xs mx-2">&</span>
-              {t("groomName")}
+              판데이 수단슈
             </div>
-            <div className="text-2xl sm:text-xl">{t("married")}</div>
+            <div className="text-2xl sm:text-xl">결혼합니다</div>
           </div>
           <img
             className="w-[90%] mb-[5%]"
@@ -66,25 +66,17 @@ const Main = () => {
             <div className="my-[20%]">
               <div className="mb-[10%]">
                 <div className="flex justify-center items-baseline">
-                  <div>
-                    {t("groomFatherName")} · {t("groomMotherName")}
-                  </div>
-                  <div className="text-xs mx-1 text-[#999]">
-                    {t("'s")} {t("son")}
-                  </div>
+                  <div>크리스나 모한 샬마 · 레카 라니 샬마</div>
+                  <div className="text-xs mx-1 text-[#999]">의 아들</div>
                 </div>
-                <div className="my-2 "> {t("groomName")}</div>
+                <div className="my-2 ">판데이 수단슈</div>
               </div>
               <div>
                 <div className="flex justify-center items-baseline ">
-                  <div>
-                    {t("brideFatherName")} · {t("brideMotherName")}
-                  </div>
-                  <div className="text-xs mx-1 text-[#999]">
-                    {t("'s")} {t("daughter")}
-                  </div>
+                  <div>김원중 · 이봉선</div>
+                  <div className="text-xs mx-1 text-[#999]">의 딸</div>
                 </div>
-                <div className=" my-2">{t("brideName")}</div>
+                <div className=" my-2">김선형</div>
               </div>
             </div>
 
@@ -112,7 +104,7 @@ const Main = () => {
           </div>
           <Gallery />
           <Calendar t={t} />
-          <div className=" title">{t("comment")}</div>
+          <div className=" title">축하의 말씀</div>
           <Comment />
         </div>
         <Map t={t} />

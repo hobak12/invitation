@@ -67,6 +67,7 @@ const CommentDeleteModal = ({
             className="input_PW  mr-4"
             placeholder="비밀번호"
             type="password"
+            autoComplete="new-password"
             ref={deletePasswordRef}
             onChange={(e) => onChangePasswordHandler(e)}
           />

@@ -94,7 +94,7 @@ const Map = ({ t }: any) => {
     <div className="mb-[20%] ">
       <div className=" title  ">{t("map")}</div>
 
-      <div className=" border-2 border-pink-200 text-center bg-white rounded-lg w-fit p-4 my-4 mx-auto">
+      <div className=" border-2 border-pink-200 text-center bg-white rounded-lg w-fit p-4 mt-9 mx-auto">
         <div className="mb-2">{t("time")}</div>
         <div>{t("place")}</div>
       </div>

@@ -67,12 +67,14 @@ const CommentInput = () => {
         <input
           className="input"
           placeholder="이름"
+          autoComplete="new-password"
           ref={nameRef}
           onChange={(e) => onChangeNameHandler(e)}
         />
         <input
           className="input"
           placeholder="비밀번호"
+          autoComplete="new-password"
           type="password"
           ref={passwordRef}
           onChange={(e) => onChangePasswordHandler(e)}

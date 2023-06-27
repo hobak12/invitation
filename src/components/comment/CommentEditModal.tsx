@@ -101,6 +101,7 @@ const CommentEditModal = ({ data, setOpenEditModal, openEditModal }: any) => {
                 </label>
                 <input
                   className="input_edit"
+                  autoComplete="new-password"
                   value={name}
                   onChange={(e) => onChangeNameHandler(e)}
                 />
@@ -109,6 +110,7 @@ const CommentEditModal = ({ data, setOpenEditModal, openEditModal }: any) => {
                 <input
                   className="input_edit "
                   placeholder="비밀번호"
+                  autoComplete="new-password"
                   type="password"
                   ref={editPasswordRef}
                   onChange={(e) => onChangePasswordHandler(e)}
